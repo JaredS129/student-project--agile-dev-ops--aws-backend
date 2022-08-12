@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const AppContainer = ({ children }) => {
   return (
     <div className="App">
-      <h1>Todos</h1>
+      <h1>Questions</h1>
       {children}
     </div>
   );
@@ -18,7 +18,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/todos");
+      const response = await fetch("/api/questions");
 
       console.log(response.ok);
 
