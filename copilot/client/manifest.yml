@@ -10,7 +10,7 @@ type: Load Balanced Web Service
 http:
   # Requests to this path will be forwarded to your service.
   # To match all requests you can use the "/" path.
-  path: 'client'
+  path: '/'
   # You can specify a custom health check path. The default is "/".
   # healthcheck: '/'
 
@@ -35,8 +35,10 @@ exec: true     # Enable running commands in your container.
 #  GITHUB_TOKEN: GITHUB_TOKEN  # The key is the name of the environment variable, the value is the name of the SSM parameter.
 
 # You can override any of the values defined above by environment.
-#environments:
-#  test:
-#    count: 2               # Number of tasks to run for the "test" environment.
-#    deployment:            # The deployment strategy for the "test" environment.
-#       rolling: 'recreate' # Stops existing tasks before new ones are started for faster deployments.
+environments:
+  test:
+    http:
+      alias: jmcd-22t3-test.gambian-diverge-midnight.com
+  production:
+    http:
+      alias: jmcd-22t3-production.gambian-diverge-midnight.com
