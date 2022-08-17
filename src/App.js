@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+const api = require("./api");
 
 const AppContainer = ({ children }) => {
   return (
@@ -11,26 +12,26 @@ const AppContainer = ({ children }) => {
 };
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState("");
+ /* const [error, setError] = useState("");*/
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/questions");
+/*      const response = await api.getQuestions();
 
-      console.log(response.ok);
-
+      console.log(response);*/
+/*
       if (response.ok === false) {
         setIsError(true);
         setIsLoading(false);
         setError(`Error: API call returned a status ${response.status}`);
         return;
       }
-
-      const todos = await response.json();
-      setTodos(todos);
+*/
+      const data = await api.getQuestions();
+      setQuestions(data);
       setIsLoading(false);
     } catch (error) {
       setIsError(true);
@@ -52,15 +53,15 @@ function App() {
   if (isError) {
     return (
       <AppContainer>
-        <p className="error">{error}. Is your server running?</p>
+        <p className="error">{"error"}. Is your server running?</p>
       </AppContainer>
     );
   }
 
-  if (todos.length === 0) {
+  if (questions.length === 0) {
     return (
       <AppContainer>
-        <p>No todo's yet!</p>
+        <p>No questions yet!</p>
       </AppContainer>
     );
   }
@@ -68,8 +69,8 @@ function App() {
   return (
     <AppContainer>
       <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.description}</li>
+        {questions.map((question) => (
+          <li key={question.question_id}>{question.title}</li>
         ))}
       </ul>
     </AppContainer>
