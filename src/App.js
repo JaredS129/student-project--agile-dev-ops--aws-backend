@@ -15,7 +15,7 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState("");
+ /* const [error, setError] = useState("");*/
 
   const fetchData = async () => {
     try {
@@ -53,7 +53,7 @@ function App() {
   if (isError) {
     return (
       <AppContainer>
-        <p className="error">{error}. Is your server running?</p>
+        <p className="error">{"error"}. Is your server running?</p>
       </AppContainer>
     );
   }
