@@ -17,4 +17,4 @@ const getQuestions = async () => {
   return testQuestions;
 };
 
-module.exports = {getQuestions}
+export { getQuestions };
