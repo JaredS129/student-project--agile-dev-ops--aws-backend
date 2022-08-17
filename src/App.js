@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-const api = require("./api");
+import { getQuestions } from "./api";
 
 const AppContainer = ({ children }) => {
   return (
@@ -15,14 +15,14 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
- /* const [error, setError] = useState("");*/
+  /* const [error, setError] = useState("");*/
 
   const fetchData = async () => {
     try {
-/*      const response = await api.getQuestions();
+      /*      const response = await api.getQuestions();
 
       console.log(response);*/
-/*
+      /*
       if (response.ok === false) {
         setIsError(true);
         setIsLoading(false);
@@ -30,7 +30,7 @@ function App() {
         return;
       }
 */
-      const data = await api.getQuestions();
+      const data = await getQuestions();
       setQuestions(data);
       setIsLoading(false);
     } catch (error) {
