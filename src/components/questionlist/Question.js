@@ -1,7 +1,7 @@
 const Question = (title, summary, topic, isAnswered) => {
   return (
     <li>
-      <p>${title}</p>
+      <h3>${title}</h3>
       <p>${summary}</p>
       <p>${topic}</p>
       <p>${isAnswered}</p>
