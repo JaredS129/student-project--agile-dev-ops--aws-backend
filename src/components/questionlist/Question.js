@@ -1,4 +1,4 @@
-const Question = (title, summary, topic, isAnswered) => {
+const Question = ({ title, summary, topic, isAnswered }) => {
   return (
     <li>
       <h3>${title}</h3>
