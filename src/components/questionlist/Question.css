@@ -7,13 +7,20 @@
 }
 
 .title-format {
-
+  font-family: "Poppins";
+  text-align: left;
+  padding-left: 1rem;
+  color: #68628C;
  }
+
+.isanswered-format {
+    text-align: right;
+    padding-right: 1rem;
+}
 .summary-format {
     text-align: left;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
+    color: #68628C;
 }
 
 .topic-format {

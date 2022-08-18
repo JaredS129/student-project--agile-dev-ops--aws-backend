@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <div className="header">
         <div>
-          <h1 className="header__title">Questionz.io</h1>
+          <h1 className="header__title">questionz.io</h1>
           <form>
             <label htmlFor="title"></label>
             <input

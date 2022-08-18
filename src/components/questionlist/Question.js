@@ -4,8 +4,8 @@ const Question = ({ title, summary, topic, isAnswered }) => {
   return (
     <li>
       <div className="grid-container">
-        <h3>{title}</h3>
-        <p>{isAnswered ? "Solved" : "Not answered"}</p>
+        <h3 className="title-format">{title}</h3>
+        <p className="isanswered-format">{isAnswered ? "Solved" : "Not answered"}</p>
       </div>
       <p className="summary-format">{summary}</p>
       <p className="topic-format">{topic}</p>
