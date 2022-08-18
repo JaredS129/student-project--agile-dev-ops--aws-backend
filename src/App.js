@@ -69,11 +69,7 @@ function App() {
 
   return (
     <AppContainer>
-      <ul>
-        {questions.map((question) => (
-          <li key={question.question_id}>{question.title}</li>
-        ))}
-      </ul>
+      <QuestionList />
     </AppContainer>
   );
 }

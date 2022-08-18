@@ -34,15 +34,14 @@ describe("QuestionList", () => {
       isAnswered: true,
     },
   ];
+  render(<QuestionList />);
+  const listItems = screen.getAllByRole("listitem");
 
   test("renders a list of questions", () => {
-    render(<QuestionList items={questions} />);
-    const listItems = screen.getAllByRole("listitem");
     expect(listItems).toHaveLength(4);
   });
 
   test("renders the correct titles", () => {
-    const listItems = screen.getAllByRole("listitem");
     listItems.forEach((item, index) => {
       const { getByRole } = within(item);
       const { title } = questions[index];
@@ -51,7 +50,6 @@ describe("QuestionList", () => {
   });
 
   test("renders the correct summaries", () => {
-    const listItems = screen.getAllByRole("listitem");
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
       const { summary } = questions[index];
@@ -60,7 +58,6 @@ describe("QuestionList", () => {
   });
 
   test("renders the correct topic", () => {
-    const listItems = screen.getAllByRole("listitem");
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
       const { topic } = questions[index];
@@ -69,7 +66,6 @@ describe("QuestionList", () => {
   });
 
   test("renders the correct answered status", () => {
-    const listItems = screen.getAllByRole("listitem");
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
       const { isAnswered } = questions[index];

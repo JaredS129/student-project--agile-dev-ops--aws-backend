@@ -42,7 +42,7 @@ const QuestionList = () => {
           title={question.title}
           topic={question.topic}
           summary={question.summary}
-          isAnswered={question.imageDescription}
+          isAnswered={question.isAnswered}
         />
       ))}
     </ul>
