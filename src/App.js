@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { getQuestions } from "./api";
+import Header from "./components/Header";
 
 const AppContainer = ({ children }) => {
   return (
     <div className="App">
-      <h1>Questions</h1>
+      <Header/>
       {children}
     </div>
   );
