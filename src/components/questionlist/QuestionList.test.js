@@ -1,44 +1,14 @@
 import { render, screen, within } from "@testing-library/react";
 import QuestionList from "./QuestionList";
+import questionData from "../../data/questions.json";
 
 describe("QuestionList", () => {
-  const questions = [
-    {
-      id: 1,
-      title: "Question 1",
-      topic: "React",
-      summary:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-      isAnswered: true,
-    },
-    {
-      id: 2,
-      title: "Question 2",
-      topic: "React",
-      summary: "Lorem ipsum dolor sit",
-      isAnswered: false,
-    },
-    {
-      id: 3,
-      title: "Question 3",
-      topic: "Express",
-      summary:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius",
-      isAnswered: false,
-    },
-    {
-      id: 4,
-      title: "Question 4",
-      topic: "PostgresSQL",
-      summary: "Lorem ipsum dolor sit amet, consectet",
-      isAnswered: true,
-    },
-  ];
+  const questions = questionData;
   render(<QuestionList />);
   const listItems = screen.getAllByRole("listitem");
 
   test("renders a list of questions", () => {
-    expect(listItems).toHaveLength(4);
+    expect(listItems).toHaveLength(questions.length);
   });
 
   test("renders the correct titles", () => {

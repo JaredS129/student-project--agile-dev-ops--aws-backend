@@ -1,0 +1,107 @@
+[
+  {
+    "question_id": 1,
+    "title": "How do I tie my shoes",
+    "summary": "I do not know how to tie my shoes, can someone please help me learn",
+    "topic": "How-to",
+    "isAnswered": false
+  },
+  {
+    "question_id": 2,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "How-to",
+    "isAnswered": true
+  },
+  {
+    "question_id": 3,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "isAnswered": true
+  },
+  {
+    "question_id": 4,
+    "title": "Can't get header working",
+    "summary": "I have a header but I've broken it, someone please help me",
+    "topic": "Bugs",
+    "isAnswered": false
+  },
+  {
+    "question_id": 5,
+    "title": "There's a bug on my wall",
+    "summary": "It's just occurred to me that this might be in the wrong topic section",
+    "topic": "Bugs",
+    "isAnswered": false
+  },
+  {
+    "question_id": 6,
+    "title": "How do I tie my shoes",
+    "summary": "I do not know how to tie my shoes, can someone please help me learn",
+    "topic": "How-to",
+    "isAnswered": false
+  },
+  {
+    "question_id": 7,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "How-to",
+    "isAnswered": true
+  },
+  {
+    "question_id": 8,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "isAnswered": true
+  },
+  {
+    "question_id": 9,
+    "title": "Can't get header working",
+    "summary": "I have a header but I've broken it, someone please help me",
+    "topic": "Bugs",
+    "isAnswered": false
+  },
+  {
+    "question_id": 10,
+    "title": "There's a bug on my wall",
+    "summary": "It's just occurred to me that this might be in the wrong topic section",
+    "topic": "Bugs",
+    "isAnswered": false
+  },
+  {
+    "question_id": 11,
+    "title": "How do I tie my shoes",
+    "summary": "I do not know how to tie my shoes, can someone please help me learn",
+    "topic": "How-to",
+    "isAnswered": false
+  },
+  {
+    "question_id": 12,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "How-to",
+    "isAnswered": true
+  },
+  {
+    "question_id": 13,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "isAnswered": true
+  },
+  {
+    "question_id": 14,
+    "title": "Can't get header working",
+    "summary": "I have a header but I've broken it, someone please help me",
+    "topic": "Bugs",
+    "isAnswered": false
+  },
+  {
+    "question_id": 15,
+    "title": "There's a bug on my wall",
+    "summary": "It's just occurred to me that this might be in the wrong topic section",
+    "topic": "Bugs",
+    "isAnswered": false
+  }
+]

@@ -3,7 +3,7 @@ import App from "./App";
 
 test("renders title", async () => {
   render(<App />);
-  const linkElement = await screen.findByText(/Questions/i);
+  const linkElement = await screen.findByText(/Questionz.io/i);
   expect(linkElement).toBeInTheDocument();
 });
 

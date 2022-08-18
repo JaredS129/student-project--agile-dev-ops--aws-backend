@@ -1,44 +1,14 @@
 import Question from "./Question";
+import questionsData from "../../data/questions.json";
 
 const QuestionList = () => {
-  const questions = [
-    {
-      id: 1,
-      title: "Question 1",
-      topic: "React",
-      summary:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-      isAnswered: true,
-    },
-    {
-      id: 2,
-      title: "Question 2",
-      topic: "React",
-      summary: "Lorem ipsum dolor sit ",
-      isAnswered: false,
-    },
-    {
-      id: 3,
-      title: "Question 3",
-      topic: "Express",
-      summary:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius",
-      isAnswered: false,
-    },
-    {
-      id: 4,
-      title: "Question 4",
-      topic: "PostgresSQL",
-      summary: "Lorem ipsum dolor sit amet, consectet",
-      isAnswered: true,
-    },
-  ];
+  const questions = questionsData;
 
   return (
     <ul>
       {questions.map((question) => (
         <Question
-          key={question.id}
+          key={question.question_id}
           title={question.title}
           topic={question.topic}
           summary={question.summary}
