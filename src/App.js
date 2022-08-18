@@ -2,11 +2,12 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { getQuestions } from "./api";
 import Header from "./components/Header";
+import QuestionList from "./components/questionlist/QuestionList";
 
 const AppContainer = ({ children }) => {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       {children}
     </div>
   );
@@ -69,11 +70,7 @@ function App() {
 
   return (
     <AppContainer>
-      <ul>
-        {questions.map((question) => (
-          <li key={question.question_id}>{question.title}</li>
-        ))}
-      </ul>
+      <QuestionList />
     </AppContainer>
   );
 }
