@@ -74,7 +74,7 @@ describe("QuestionList", () => {
       const { getByText } = within(item);
       const { isAnswered } = questions[index];
       expect(
-        getByText(isAnswered ? "Answered" : "Unanswered")
+        getByText(isAnswered ? "Solved" : "Not answered")
       ).toBeInTheDocument();
     });
   });
