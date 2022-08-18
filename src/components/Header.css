@@ -12,7 +12,7 @@ ul {
 }
 
 .grey {
-  background-color: #595c59 !important;
+  background-color: #68628C !important;
 }
 
 .header {
@@ -21,11 +21,11 @@ ul {
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
-  border-bottom: 0.1rem solid #595c595d;
+  border-bottom: 0.1rem solid #68628C;
 }
 
 .header__title {
-  color: #7f03fc;
+  color: #684FF7;
   font-size: 4rem;
   font-weight: 900;
 }
@@ -42,7 +42,7 @@ ul {
 .header__nav--link {
   color: white;
   border-radius: 0.3rem;
-  background-color: #7f03fc;
+  background-color: #684FF7;
   font-size: 1.5rem;
   padding: 0.6rem;
   margin: 1rem;
