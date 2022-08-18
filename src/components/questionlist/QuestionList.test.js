@@ -15,7 +15,7 @@ describe("QuestionList", () => {
       id: 2,
       title: "Question 2",
       topic: "React",
-      summary: "Lorem ipsum dolor sit ",
+      summary: "Lorem ipsum dolor sit",
       isAnswered: false,
     },
     {
@@ -53,7 +53,7 @@ describe("QuestionList", () => {
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
       const { summary } = questions[index];
-      expect(getByText(summary)).toBeInTheDocument();
+      expect(getByText(summary)).toHaveTextContent(summary);
     });
   });
 
@@ -61,7 +61,7 @@ describe("QuestionList", () => {
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
       const { topic } = questions[index];
-      expect(getByText(topic)).toBeInTheDocument();
+      expect(getByText(topic)).toHaveTextContent(topic);
     });
   });
 
@@ -71,7 +71,7 @@ describe("QuestionList", () => {
       const { isAnswered } = questions[index];
       expect(
         getByText(isAnswered ? "Solved" : "Not answered")
-      ).toBeInTheDocument();
+      ).toHaveTextContent(isAnswered ? "Solved" : "Not answered");
     });
   });
 });
