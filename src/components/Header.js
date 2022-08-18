@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header>
       <div>
-        <Link to="/">Questionz.io</Link>
+        <h1>Questionz.io</h1>
         <form>
           <label htmlFor="title">Search for a question...</label>
           <input type="text" id="title" required />
         </form>
         <ul>
           <li>
-            <Link to="/">Log In</Link>
+            <p>Log In</p>
           </li>
           <li>
-            <Link to="/">Dashboard</Link>
+            <p>Dashboard</p>
           </li>
         </ul>
       </div>
