@@ -65,7 +65,7 @@ function App() {
 
   return (
     <AppContainer>
-      <QuestionList />
+      <QuestionList questions={questions} />
     </AppContainer>
   );
 }

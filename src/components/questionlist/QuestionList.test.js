@@ -4,7 +4,7 @@ import questionData from "../../data/questions.json";
 
 describe("QuestionList", () => {
   const questions = questionData;
-  render(<QuestionList />);
+  render(<QuestionList questions={questions} />);
   const listItems = screen.getAllByRole("listitem");
 
   test("renders a list of questions", () => {
