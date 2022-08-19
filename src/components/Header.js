@@ -13,7 +13,7 @@ const Header = ({ searchText, setSearchText }) => {
               className="search-format"
               type="text"
               id="title"
-              value={searchText}
+              value={searchText ? searchText : ""}
               placeholder="Search here"
               onChange={(e) => setSearchText(e.target.value)}
             />
