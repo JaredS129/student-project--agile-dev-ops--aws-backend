@@ -26,7 +26,7 @@ const filterByTopic = (topic, useTopic) => {
 
 const QuestionList = ({ questions, searchText }) => {
   const [useAnswered, setUseAnswered] = useState("both");
-  const [useTopic, setUseTopic] = useState("all");
+  const [useTopic, setUseTopic] = useState("All");
   return (
     <div>
       <FilterForm
