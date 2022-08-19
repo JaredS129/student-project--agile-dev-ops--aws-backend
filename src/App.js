@@ -29,11 +29,8 @@ function App() {
       setError(`Error: API call returned a status ${data.error}`);
       return;
     }
-
     setQuestions(data.body);
     setIsLoading(false);
-
-    console.log(data);
   };
 
   useEffect(() => {
