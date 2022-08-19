@@ -14,7 +14,7 @@ const Header = () => {
               type="text"
               id="title"
               required
-              value="Search for a question..."
+              placeholder="Search for a question..."
             />
           </form>
         </div>
