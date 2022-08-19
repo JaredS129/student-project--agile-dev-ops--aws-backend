@@ -4,13 +4,13 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <div className="header">
+      <div className="header-grid">
         <div>
-          <h1 className="header__title">Questionz.io</h1>
+          <h1 className="header-format">Questionz.io</h1>
           <form>
             <label htmlFor="title"></label>
             <input
-              className="header__search"
+              className="search-format"
               type="text"
               id="title"
               required
@@ -18,11 +18,11 @@ const Header = () => {
             />
           </form>
         </div>
-        <ul>
-          <li className="header__nav--link">
+        <ul className="nav-link">
+          <li className="login-format">
             <p>Log In</p>
           </li>
-          <li className="header__nav--link grey">
+          <li className="dashboard-format">
             <p>Dashboard</p>
           </li>
         </ul>

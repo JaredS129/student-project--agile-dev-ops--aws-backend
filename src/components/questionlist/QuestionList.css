@@ -5,4 +5,9 @@
     border-radius: 0.625rem;
     margin: 3rem 2rem;
     box-shadow: 0.25rem 0.25rem 0.5rem #00000069;
+    list-style: none;
   }
+
+ul {
+    padding-left: 0;
+}
