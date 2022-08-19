@@ -17,6 +17,13 @@ const filterByAnswered = (isAnswered, useAnswered) => {
   return false;
 };
 
+const filterByTopic = (topic, useTopic) => {
+  if (useTopic === "All") {
+    return true;
+  }
+  return topic === useTopic;
+};
+
 const QuestionList = ({ questions, searchText }) => {
   const [useAnswered, setUseAnswered] = useState("both");
   const [useTopic, setUseTopic] = useState("all");
@@ -38,6 +45,7 @@ const QuestionList = ({ questions, searchText }) => {
           .filter((question) =>
             filterByAnswered(question.isAnswered, useAnswered)
           )
+          .filter((question) => filterByTopic(question.topic, useTopic))
           .map((question) => (
             <div className="question-container" key={question.question_id}>
               <Question
