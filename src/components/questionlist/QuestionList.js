@@ -25,7 +25,9 @@ const QuestionList = ({ questions, searchText }) => {
       <ul>
         {questions
           .filter((question) =>
-            question.title.toLowerCase().includes(searchText.toLowerCase())
+            question.title
+              .toLowerCase()
+              .includes(searchText ? searchText.toLowerCase() : "")
           )
           .filter((question) =>
             filterByAnswered(question.isAnswered, useAnswered)
