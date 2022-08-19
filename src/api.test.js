@@ -3,5 +3,7 @@ import questions from "./data/questions.json";
 
 test("getQuestions returns data", async () => {
   const expectedQuestions = questions;
-  expect(await getQuestions()).toEqual(expectedQuestions);
+  const response = await getQuestions();
+
+  expect(response.body).toEqual(expectedQuestions);
 });
