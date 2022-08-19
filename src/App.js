@@ -17,21 +17,21 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  /* const [error, setError] = useState("");*/
+  const [error, setError] = useState("");
 
   const fetchData = async () => {
     try {
-      /*      const response = await api.getQuestions();
+      const response = await getQuestions();
 
-      console.log(response);*/
-      /*
+      console.log(response);
+
       if (response.ok === false) {
         setIsError(true);
         setIsLoading(false);
         setError(`Error: API call returned a status ${response.status}`);
         return;
       }
-*/
+
       const data = await getQuestions();
       setQuestions(data);
       setIsLoading(false);
@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [error]);
 
   if (isLoading) {
     return (
@@ -55,7 +55,7 @@ function App() {
   if (isError) {
     return (
       <AppContainer>
-        <p className="error">{"error"}. Is your server running?</p>
+        <p className="error">{error}. Is your server running?</p>
       </AppContainer>
     );
   }
