@@ -33,9 +33,8 @@ const QuestionList = ({ questions, searchText }) => {
             filterByAnswered(question.isAnswered, useAnswered)
           )
           .map((question) => (
-            <div className="question-container">
+            <div className="question-container" key={question.question_id}>
               <Question
-                key={question.question_id}
                 title={question.title}
                 topic={question.topic}
                 summary={question.summary}
