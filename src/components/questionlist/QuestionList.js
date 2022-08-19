@@ -19,9 +19,15 @@ const filterByAnswered = (isAnswered, useAnswered) => {
 
 const QuestionList = ({ questions, searchText }) => {
   const [useAnswered, setUseAnswered] = useState("both");
+  const [useTopic, setUseTopic] = useState("all");
   return (
     <div>
-      <FilterForm useAnswered={useAnswered} setUseAnswered={setUseAnswered} />
+      <FilterForm
+        useAnswered={useAnswered}
+        setUseAnswered={setUseAnswered}
+        useTopic={useTopic}
+        setUseTopic={setUseTopic}
+      />
       <ul>
         {questions
           .filter((question) =>
