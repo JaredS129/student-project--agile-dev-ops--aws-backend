@@ -1,7 +1,7 @@
 const FilterForm = ({ useAnswered, setUseAnswered }) => {
   return (
     <form>
-      <label htmlFor="answered">Choose unanswered/answered:</label>
+      <label htmlFor="answered">Filter by:</label>
       <select
         id="answered"
         name="answered"
@@ -10,7 +10,7 @@ const FilterForm = ({ useAnswered, setUseAnswered }) => {
           setUseAnswered(x.target.value);
         }}
       >
-        <option value="unanswered">unanswered</option>
+        <option value="unanswered">not answered</option>
         <option value="answered">answered</option>
         <option value="both">both</option>
       </select>
