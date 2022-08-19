@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.title-format {
+  font-family: "Poppins";
+  text-align: left;
+  padding-left: 1rem;
+  color: #68628c;
+}
+
+.solved-format {
+   border: solid;
+   color: white;
+   border-color:#20BD59;
+   background:#20BD59;
+   border-radius: 0.3rem;
+   padding: 0.25rem;
+   width: fit-content;
+}
+
+.answer-format{
+    display: grid;
+    justify-content: right;
+    margin-right: 1rem;
+}
+
+.not-answered-format {
+   border: solid;
+   color: #FF5555;
+   border-color: #FF5555;
+   background:white;
+   border-radius: 0.3rem;
+   padding: 0.25rem;
+   width: fit-content;
+}
+
+.summary-format {
+  font-family: "Poppins";
+  text-align: left;
+  padding: 1rem;
+  color: #68628c;
+}
+
+.topic-format {
+  font-size: 0;
+}

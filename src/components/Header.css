@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -35,14 +35,17 @@ ul {
   border: 0.15rem solid;
   border-radius: 0.3rem;
   opacity: 0.2;
+  font-family: "Poppins";
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
 }
 
 .header__nav--link {
   color: white;
   border-radius: 0.3rem;
   background-color: #684FF7;
+  font-family: "Poppins";
   font-size: 1.5rem;
   padding: 0.6rem;
   margin: 1rem;
