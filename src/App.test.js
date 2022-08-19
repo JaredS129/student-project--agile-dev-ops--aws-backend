@@ -12,3 +12,5 @@ test("renders lists of questions", async () => {
   const linkElement = await screen.findByRole("list");
   expect(linkElement).toBeInTheDocument();
 });
+
+test.todo("renders error if data.error is returned");
