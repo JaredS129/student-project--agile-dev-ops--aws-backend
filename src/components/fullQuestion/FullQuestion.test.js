@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import {FullQuestion} from "./FullQuestion.js";
+import FullQuestion from "./FullQuestion"
 
 test("renders a full question", () => {
   render(

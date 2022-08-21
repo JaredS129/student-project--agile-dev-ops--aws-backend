@@ -19,4 +19,4 @@ const FullQuestion = (props) => {
     )
 }
 
-export {FullQuestion}
+export default FullQuestion;
