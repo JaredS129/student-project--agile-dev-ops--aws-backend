@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ searchText, setSearchText }) => {
   return (
     <header>
       <div className="header-grid">
@@ -13,8 +13,9 @@ const Header = () => {
               className="search-format"
               type="text"
               id="title"
-              required
-              placeholder="Search for a question..."
+              value={searchText ? searchText : ""}
+              placeholder="Search here"
+              onChange={(e) => setSearchText(e.target.value)}
             />
           </form>
         </div>

@@ -4,10 +4,10 @@ import { getQuestions } from "./api";
 import Header from "./components/Header";
 import QuestionList from "./components/questionlist/QuestionList";
 
-const AppContainer = ({ children }) => {
+const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
     <div className="App">
-      <Header />
+      <Header searchText={searchText} setSearchText={setSearchText} />
       {children}
     </div>
   );
@@ -18,6 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   const fetchData = async () => {
     const data = await getQuestions();
@@ -28,16 +29,13 @@ function App() {
       setError(`Error: API call returned a status ${data.error}`);
       return;
     }
-
     setQuestions(data.body);
     setIsLoading(false);
-
-    console.log(data);
   };
 
   useEffect(() => {
     fetchData();
-  }, [error]);
+  }, []);
 
   if (isLoading) {
     return (
@@ -64,8 +62,8 @@ function App() {
   }
 
   return (
-    <AppContainer>
-      <QuestionList questions={questions} />
+    <AppContainer searchText={searchText} setSearchText={setSearchText}>
+      <QuestionList questions={questions} searchText={searchText} />
     </AppContainer>
   );
 }
