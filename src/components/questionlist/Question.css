@@ -3,13 +3,19 @@
 .question-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5rem, 5rem, 1fr;
+  grid-template-areas:
+    "title title"
+    "topic isanswered"
+    "summary summary";
 }
 
 .title-format {
   font-family: "Poppins";
-  text-align: left;
+  text-align: center;
   padding-left: 1rem;
   color: #68628c;
+  grid-area: title;
 }
 
 .solved-format {
@@ -24,8 +30,8 @@
 
 .answer-format {
   display: grid;
-  justify-content: right;
-  margin-right: 1rem;
+  justify-content: center;
+  grid-area: isanswered;
 }
 
 .not-answered-format {
@@ -43,8 +49,23 @@
   text-align: left;
   padding: 1rem;
   color: #68628c;
+  grid-area: summary;
 }
 
 .topic-format {
-  font-size: 0;
+  font-family: "Poppins";
+  grid-area: topic;
+  font-style: italic
+}
+
+@media (min-width: 50rem){
+  .question-grid {
+    grid-template-columns: 1fr 10rem;
+    grid-template-rows: 3rem, 1fr;
+    grid-template-areas:
+    "title isanswered"
+    "summary topic";
+
+  }
+
 }
