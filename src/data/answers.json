@@ -1,4 +1,4 @@
-[[{
+{"1":[{
     "answer_id":1,
     "question_id":1,
     "answerText":"MY answer is to tie your shoes",
@@ -28,4 +28,5 @@
     "answerText":"MY answer is to tie your shoes",
     "goodAnswer":false
 
-}]]
+}]
+}
