@@ -16,7 +16,7 @@ const FullQuestion = (props) => {
       <h3>What have you attempted?</h3>
       <p>{props.attempted ?? "placeholder"}</p>
       <h3>Date asked</h3>
-      <p>{props.dateCreated}</p>
+      <p>{props.dateCreated ?? "placeholder"}</p>
     </div>
   );
 };
