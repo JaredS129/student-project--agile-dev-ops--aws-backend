@@ -12,6 +12,7 @@ test("renders a full question", () => {
       tryAchieve="tryAchieveTest"
       issue="issueTest"
       attempted="attemptedTest"
+      dateCreated="dateTest"
     />
   );
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
@@ -22,4 +23,5 @@ test("renders a full question", () => {
   expect(screen.getByText("tryAchieveTest")).toBeInTheDocument();
   expect(screen.getByText("issueTest")).toBeInTheDocument();
   expect(screen.getByText("attemptedTest")).toBeInTheDocument();
+  expect(screen.getByText("dateTest")).toBeInTheDocument();
 });
