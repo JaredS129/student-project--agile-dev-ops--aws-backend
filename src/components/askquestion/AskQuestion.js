@@ -17,7 +17,7 @@ const AskQuestion = ({
       <h2 className="h2-format">What's your question?</h2>
       <form>
         <label className="label-format" htmlFor="topic">
-          Question Topic:
+          Topic:
         </label>
         <div>
           <input
