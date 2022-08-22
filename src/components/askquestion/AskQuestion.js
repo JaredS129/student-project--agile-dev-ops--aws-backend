@@ -1,8 +1,9 @@
 const AskQuestion = ({props, topic, setTopic, workOn, setWorkOn, tryAchieve, setTryAchieve, issue, setIssue, attempted, setAttempted}) => {
   return (
     <div>
+      <h2>What's your question?</h2>
       <form>
-        <label htmlFor="topic">Topic:</label>
+        <label htmlFor="topic">Question Topic:</label>
         <input
           type="text"
           id="topic"
