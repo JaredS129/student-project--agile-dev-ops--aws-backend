@@ -1,14 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import Question from "./Question";
+import { BrowserRouter } from "react-router-dom";
 
 test("renders a solved question", () => {
   render(
-    <Question
-      title="TestQuestion"
-      summary="TestSummary"
-      topic="test"
-      isAnswered={true}
-    />
+    <BrowserRouter>
+      <Question
+        title="TestQuestion"
+        summary="TestSummary"
+        topic="test"
+        isAnswered={true}
+      />
+    </BrowserRouter>
   );
   expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(
     "TestQuestion"
@@ -20,12 +23,14 @@ test("renders a solved question", () => {
 
 test("renders an unsolved question", () => {
   render(
-    <Question
-      title="TestQuestion"
-      summary="TestSummary"
-      topic="test"
-      isAnswered={false}
-    />
+    <BrowserRouter>
+      <Question
+        title="TestQuestion"
+        summary="TestSummary"
+        topic="test"
+        isAnswered={false}
+      />
+    </BrowserRouter>
   );
   expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(
     "TestQuestion"
