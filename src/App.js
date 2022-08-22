@@ -5,6 +5,7 @@ import { getQuestions } from "./api";
 import Header from "./components/Header";
 import QuestionList from "./components/questionlist/QuestionList";
 import AskQuestion from "./components/askquestion/AskQuestion";
+import FullQuestion from "./components/fullQuestion/FullQuestion";
 
 const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
@@ -72,7 +73,8 @@ function App() {
             <QuestionList questions={questions} searchText={searchText} />
           }
         ></Route>
-        <Route path="/askQuestion" element={<AskQuestion/>}></Route>
+        <Route path="/askQuestion" element={<AskQuestion />}></Route>
+        <Route path="/question/:id" element={<FullQuestion />}></Route>
       </Routes>
     </AppContainer>
   );
