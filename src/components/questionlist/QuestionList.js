@@ -2,6 +2,7 @@ import Question from "./Question";
 import FilterForm from "./FilterForm";
 import React, { useState } from "react";
 import "./QuestionList.css";
+import { Link } from "react-router-dom";
 
 const filterByAnswered = (isAnswered, useAnswered) => {
   // if useAnswered is both then return true
@@ -29,7 +30,7 @@ const QuestionList = ({ questions, searchText }) => {
   const [useTopic, setUseTopic] = useState("All");
   return (
     <div>
-      <button>Ask Question</button>
+      <Link to="/askQuestion">Ask Question</Link>
       <FilterForm
         useAnswered={useAnswered}
         setUseAnswered={setUseAnswered}
