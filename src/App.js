@@ -1,4 +1,5 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { getQuestions } from "./api";
 import Header from "./components/Header";
@@ -62,9 +63,11 @@ function App() {
   }
 
   return (
-    <AppContainer searchText={searchText} setSearchText={setSearchText}>
-      <QuestionList questions={questions} searchText={searchText} />
-    </AppContainer>
+    <Routes>
+      <AppContainer searchText={searchText} setSearchText={setSearchText}>
+        <QuestionList questions={questions} searchText={searchText} />
+      </AppContainer>
+    </Routes>
   );
 }
 
