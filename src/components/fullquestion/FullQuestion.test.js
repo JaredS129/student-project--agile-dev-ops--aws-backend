@@ -13,6 +13,7 @@ test("renders a full question", () => {
       issue="issueTest"
       attempted="attemptedTest"
       dateCreated="1997-07-16T19:20:30.45+01:00"
+      author="testAuthor"
     />
   );
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
@@ -25,4 +26,5 @@ test("renders a full question", () => {
   expect(screen.getByText("attemptedTest")).toBeInTheDocument();
   //TO DO: fix date test since dates are REALLY annoying -> expect(screen.getByText(somedate)).toBeInTheDocument();
   //Why annoying? because the date will be different depending on the timezone of where the test is run
+  expect(screen.getByText("testAuthor")).toBeInTheDocument();
 });

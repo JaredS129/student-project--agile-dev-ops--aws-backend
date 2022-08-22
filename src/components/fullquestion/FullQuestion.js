@@ -24,6 +24,9 @@ const FullQuestion = (props) => {
       <p>{props.attempted ?? "placeholder"}</p>
       <h3>Date asked</h3>
       <p>{niceDate ?? "placeholder"}</p>
+      <p>
+        asked by: <span>{props.author ?? "placeholder"}</span>
+      </p>
     </div>
   );
 };
