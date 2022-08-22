@@ -1,14 +1,24 @@
 import Answer from "./Answer";
-import React, { useState } from "react";
+import React from "react";
 import "./AnswerList.css";
 
-const AnswerList = ({}) => {
-    return (
-        <div>
-            <ul>
-                <Question title={Answer.answerTitle}
-                topic={answer}
-            </ul>
-        </div>
-    )
-}
+const AnswerList = ({ answers }) => {
+  return (
+    <div>
+      <ul>
+        {answers.map((answer) => {
+          return (
+            <Answer
+              key={answer.answer_id}
+              title={answer.answerTitle}
+              text={answer.answerText}
+              goodAnswer={answer.goodAnswer}
+            />
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default AnswerList;
