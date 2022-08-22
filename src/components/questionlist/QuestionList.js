@@ -51,6 +51,7 @@ const QuestionList = ({ questions, searchText }) => {
           .map((question) => (
             <div className="question-container" key={question.question_id}>
               <Question
+                question_id={question.question_id}
                 title={question.title}
                 topic={question.topic}
                 summary={question.summary}
