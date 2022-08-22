@@ -12,9 +12,9 @@ const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
           setUseAnswered(x.target.value);
         }}
       >
-        <option value="unanswered">not answered</option>
-        <option value="answered">answered</option>
-        <option value="both">both</option>
+        <option value="unanswered">Not answered</option>
+        <option value="answered">Answered</option>
+        <option value="both">Both</option>
       </select>
       <label htmlFor="topics">Topic:</label>
       <select className="filter-format"

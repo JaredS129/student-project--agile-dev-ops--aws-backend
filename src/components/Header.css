@@ -13,7 +13,7 @@
 }
 
 .header-format {
-  color: #684FF7;
+  color: #684ff7;
   padding-left: 2rem;
   font-weight: 900;
 }
@@ -22,7 +22,8 @@
   width: 85%;
   border: 0.15rem solid;
   border-radius: 0.2rem;
-  opacity: 0.2;
+  border-color: #595c59;
+  opacity: 0.5;
   font-size: 0.75rem;
   padding: 0.5rem 1rem;
   margin-left: 2rem;
@@ -36,7 +37,7 @@
 .login-format {
   color: white;
   border-radius: 0.2rem;
-  background-color: #684FF7;
+  background-color: #684ff7;
   line-height: 2rem;
   font-size: 1rem;
   padding: 0rem 0.125rem;
@@ -46,7 +47,7 @@
 .dashboard-format {
   color: white;
   border-radius: 0.2rem;
-  background-color: #595C59 ;
+  background-color: #595c59;
   font-size: 1rem;
   line-height: 2rem;
   padding: 0rem 0.125rem;
