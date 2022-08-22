@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { getQuestions } from "./api";
 import Header from "./components/Header";
-import QuestionList from "./components/questionlist/QuestionList";
+import QuestionList from "./components/questionList/QuestionList";
 
 const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
