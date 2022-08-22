@@ -15,7 +15,7 @@ const Question = ({ question_id, title, summary, topic, isAnswered }) => {
         )}
       </p>
       <p className="summary-format">{summary}</p>
-      <p className="topic-format">{topic}</p>
+      <p className="topic-layout">{topic}</p>
     </li>
   );
 };

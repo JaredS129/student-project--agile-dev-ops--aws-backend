@@ -22,7 +22,7 @@
   width: 85%;
   border: 0.15rem solid;
   border-radius: 0.2rem;
-  border-color: #595c59;
+  border-color: #68628c;
   opacity: 0.5;
   font-size: 0.75rem;
   padding: 0.5rem 1rem;
@@ -47,7 +47,7 @@
 .dashboard-format {
   color: white;
   border-radius: 0.2rem;
-  background-color: #595c59;
+  background-color: #68628c;;
   font-size: 1rem;
   line-height: 2rem;
   padding: 0rem 0.125rem;

@@ -52,7 +52,7 @@
   grid-area: summary;
 }
 
-.topic-format {
+.topic-layout {
   font-family: "Poppins";
   grid-area: topic;
   font-style: italic

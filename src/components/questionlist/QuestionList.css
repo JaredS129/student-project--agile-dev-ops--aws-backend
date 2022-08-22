@@ -8,6 +8,21 @@
     list-style: none;
   }
 
+.link-format {
+    display: block;
+    width: fit-content;
+    font-weight: 900;
+    color: black;
+    border-color: #68628c !important;
+    opacity: 0.5;
+    border: 0.15rem solid;
+    border-radius: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
 ul {
     padding-left: 0;
 }
