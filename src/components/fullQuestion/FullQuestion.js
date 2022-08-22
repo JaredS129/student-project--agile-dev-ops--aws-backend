@@ -1,7 +1,10 @@
+import { useParams } from "react-router-dom";
+
 const FullQuestion = (props) => {
+  const { id } = useParams();
   return (
     <div>
-      <h2>{props.title}</h2>
+      <h2>{props.title ?? id}</h2>
       <h3>Topic</h3>
       <p>{props.topic}</p>
       <h3>What have you worked on?</h3>
