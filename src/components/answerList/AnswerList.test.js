@@ -26,14 +26,4 @@ describe("AnswerList", () => {
       expect(getByText(answerText)).toHaveTextContent(answerText);
     });
   });
-
-  test("renders if the question is the solution", () => {
-    listItems.forEach((item, index) => {
-      const { getByText } = within(item);
-      const { goodAnswer } = answers[index];
-      expect(getByText(goodAnswer ? "Solution" : null)).toHaveTextContent(
-        goodAnswer ? "Solution" : null
-      );
-    });
-  });
 });

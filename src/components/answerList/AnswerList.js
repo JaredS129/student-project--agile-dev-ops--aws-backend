@@ -10,8 +10,8 @@ const AnswerList = ({ answers }) => {
           return (
             <Answer
               key={answer.answer_id}
-              title={answer.answerTitle}
-              text={answer.answerText}
+              answerTitle={answer.answerTitle}
+              answerText={answer.answerText}
               goodAnswer={answer.goodAnswer}
             />
           );
