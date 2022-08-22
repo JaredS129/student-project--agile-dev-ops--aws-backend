@@ -1,18 +1,18 @@
-.filter-format {
-    display: inline-block;
-    width: fit-content;
-    border-color: #595c595d;
-    border: 0.15rem solid;
-    border-radius: 0.2rem;
-    opacity: 0.2;
-    font-size: 0.75rem;
-    padding: 0.5rem 1rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
 .form-format {
-    margin-left: 2rem;
-    text-align: left;
+  display: inline-block;
+  margin: 1rem;
+  text-align: left;
+}
+
+.filter-format {
+  display: inline-block;
+  width: fit-content;
+  border-color: #595c5977 !important;
+  border: 0.15rem solid;
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
