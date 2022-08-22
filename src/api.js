@@ -1,5 +1,7 @@
 import questions from "./data/questions.json";
+import singleQuestion from "./data/singleQuestion.json";
 import answers from "./data/answers.json";
+
 
 const getQuestions = async () => {
   const data = {
@@ -7,6 +9,14 @@ const getQuestions = async () => {
     error: undefined,
   };
   return data;
+};
+
+const getQuestionById = async (id) => {
+  const data = {
+    body: singleQuestion,
+    error: undefined,
+};
+return data;
 };
 
 const getAnswers = async () => {
@@ -17,4 +27,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getAnswers };
+export { getQuestions, getQuestionById, getAnswers };
