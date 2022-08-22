@@ -1,8 +1,10 @@
+import "./FilterForm.css";
+
 const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
   return (
-    <form>
+    <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
-      <select
+      <select className="filter-format"
         id="answered"
         name="answered"
         value={useAnswered}
@@ -15,7 +17,7 @@ const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
         <option value="both">both</option>
       </select>
       <label htmlFor="topics">Topic:</label>
-      <select
+      <select className="filter-format"
         id="topics"
         name="topics"
         value={useTopic}
