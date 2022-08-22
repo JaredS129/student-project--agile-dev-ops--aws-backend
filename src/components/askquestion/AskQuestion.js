@@ -16,10 +16,12 @@ const AskQuestion = ({
     <div>
       <h2 className="h2-format">What's your question?</h2>
       <form>
-        <label className="label-format" htmlFor="topic">Question Topic:</label>
+        <label className="label-format" htmlFor="topic">
+          Question Topic:
+        </label>
         <div>
           <input
-            className="topic-format" 
+            className="topic-format"
             type="text"
             id="topic"
             value={topic ? topic : ""}
@@ -32,7 +34,7 @@ const AskQuestion = ({
         </label>
         <div>
           <input
-            className="input-format" 
+            className="input-format"
             type="text"
             id="workOn"
             value={workOn ? workOn : ""}
@@ -40,12 +42,15 @@ const AskQuestion = ({
             onChange={(e) => setWorkOn(e.target.value)}
           />
         </div>
-        <label className="label-format" htmlFor="What are you trying to achieve?">
+        <label
+          className="label-format"
+          htmlFor="What are you trying to achieve?"
+        >
           What are you trying to achieve?
         </label>
         <div>
           <input
-            className="input-format" 
+            className="input-format"
             type="text"
             id="tryAchieve"
             value={tryAchieve ? tryAchieve : ""}
@@ -53,12 +58,15 @@ const AskQuestion = ({
             onChange={(e) => setTryAchieve(e.target.value)}
           />
         </div>
-        <label className="label-format" htmlFor="What is the issue you are having?">
+        <label
+          className="label-format"
+          htmlFor="What is the issue you are having?"
+        >
           What is the issue you are having?
         </label>
         <div>
-          <input 
-            className="input-format" 
+          <input
+            className="input-format"
             type="text"
             id="issue"
             value={issue ? issue : ""}
@@ -71,7 +79,7 @@ const AskQuestion = ({
         </label>
         <div>
           <input
-            className="input-format" 
+            className="input-format"
             type="text"
             id="attempted"
             value={attempted ? attempted : ""}
@@ -80,6 +88,7 @@ const AskQuestion = ({
           />
         </div>
       </form>
+      <button className="button-format">Ask</button>
     </div>
   );
 };
