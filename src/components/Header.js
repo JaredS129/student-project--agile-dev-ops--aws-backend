@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = ({ searchText, setSearchText }) => {
@@ -6,7 +6,9 @@ const Header = ({ searchText, setSearchText }) => {
     <header>
       <div className="header-grid">
         <div>
-          <h1 className="header-format">Questionz.io</h1>
+          <Link to="/">
+            <h1 className="header-format">Questionz.io</h1>
+          </Link>
           <form>
             <label htmlFor="title"></label>
             <input
