@@ -7,7 +7,8 @@
 .filter-format {
   display: inline-block;
   width: fit-content;
-  border-color: #595c5977 !important;
+  border-color: #68628c !important;
+  opacity: 0.5;
   border: 0.15rem solid;
   border-radius: 0.2rem;
   font-size: 0.75rem;

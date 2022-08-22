@@ -30,7 +30,7 @@ const QuestionList = ({ questions, searchText }) => {
   const [useTopic, setUseTopic] = useState("All");
   return (
     <div>
-      <Link to="/askQuestion">Ask Question</Link>
+      <Link className="link-format" to="/askQuestion">Ask Question</Link>
       <FilterForm
         useAnswered={useAnswered}
         setUseAnswered={setUseAnswered}
