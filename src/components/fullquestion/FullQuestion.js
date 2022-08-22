@@ -2,6 +2,13 @@ import { useParams } from "react-router-dom";
 
 const FullQuestion = (props) => {
   const { id } = useParams();
+  let niceDate = props.dateCreated;
+  try {
+    niceDate = new Date(props.dateCreated).toLocaleDateString();
+  } catch (error) {
+    console.log(error);
+  }
+
   return (
     <div>
       <h2>{props.title ?? id}</h2>
@@ -16,7 +23,10 @@ const FullQuestion = (props) => {
       <h3>What have you attempted?</h3>
       <p>{props.attempted ?? "placeholder"}</p>
       <h3>Date asked</h3>
-      <p>{props.dateCreated ?? "placeholder"}</p>
+      <p>{niceDate ?? "placeholder"}</p>
+      <p>
+        asked by: <span>{props.author ?? "placeholder"}</span>
+      </p>
     </div>
   );
 };

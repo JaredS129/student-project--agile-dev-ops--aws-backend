@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import QuestionList from "./components/questionlist/QuestionList";
 import AskQuestion from "./components/askquestion/AskQuestion";
 import FullQuestion from "./components/fullquestion/FullQuestion";
+import singleQuestion from "./data/singleQuestion.json";
 
 const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
@@ -74,7 +75,10 @@ function App() {
           }
         ></Route>
         <Route path="/askQuestion" element={<AskQuestion />}></Route>
-        <Route path="/question/:id" element={<FullQuestion />}></Route>
+        <Route
+          path="/question/:id"
+          element={<FullQuestion {...singleQuestion} />}
+        ></Route>
       </Routes>
     </AppContainer>
   );
