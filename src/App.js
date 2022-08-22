@@ -1,8 +1,10 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { getQuestions } from "./api";
 import Header from "./components/Header";
 import QuestionList from "./components/questionlist/QuestionList";
+import AskQuestion from "./components/askquestion/AskQuestion";
 
 const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
@@ -63,7 +65,15 @@ function App() {
 
   return (
     <AppContainer searchText={searchText} setSearchText={setSearchText}>
-      <QuestionList questions={questions} searchText={searchText} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <QuestionList questions={questions} searchText={searchText} />
+          }
+        ></Route>
+        <Route path="/askQuestion" element={<AskQuestion/>}></Route>
+      </Routes>
     </AppContainer>
   );
 }

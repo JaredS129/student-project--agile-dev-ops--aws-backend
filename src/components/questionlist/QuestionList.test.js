@@ -1,10 +1,15 @@
 import { render, screen, within } from "@testing-library/react";
 import QuestionList from "./QuestionList";
 import questionData from "../../data/questions.json";
+import { BrowserRouter } from "react-router-dom";
 
 describe("QuestionList", () => {
   const questions = questionData;
-  render(<QuestionList questions={questions} />);
+  render(
+    <BrowserRouter>
+      <QuestionList questions={questions} />
+    </BrowserRouter>
+  );
   const listItems = screen.getAllByRole("listitem");
 
   test("renders a list of questions", () => {
