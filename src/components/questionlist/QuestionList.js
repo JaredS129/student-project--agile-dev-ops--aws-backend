@@ -29,6 +29,7 @@ const QuestionList = ({ questions, searchText }) => {
   const [useTopic, setUseTopic] = useState("All");
   return (
     <div>
+      <button>Ask Question</button>
       <FilterForm
         useAnswered={useAnswered}
         setUseAnswered={setUseAnswered}
