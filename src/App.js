@@ -5,7 +5,7 @@ import { getQuestions } from "./api";
 import Header from "./components/Header";
 import QuestionList from "./components/questionlist/QuestionList";
 import AskQuestion from "./components/askquestion/AskQuestion";
-import FullQuestion from "./components/fullQuestion/FullQuestion";
+import FullQuestion from "./components/fullquestion/FullQuestion";
 
 const AppContainer = ({ children, searchText, setSearchText }) => {
   return (
