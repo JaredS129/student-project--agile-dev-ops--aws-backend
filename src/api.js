@@ -19,7 +19,7 @@ const actualGetQuestions = async () => {
 };
 
 const getPost = async () => {
-  
+  return "hello"
 }
 
 const getQuestions = async () => {
@@ -46,4 +46,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, actualGetQuestions };
+export { getQuestions, getQuestionById, getAnswers, actualGetQuestions, getPost };
