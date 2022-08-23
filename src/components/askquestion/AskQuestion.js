@@ -1,21 +1,27 @@
+import { useState } from "react";
 import "./AskQuestion.css";
+import { getPost } from "../../api";
 
-const AskQuestion = ({
-  topic,
-  setTopic,
-  workOn,
-  setWorkOn,
-  tryAchieve,
-  setTryAchieve,
-  issue,
-  setIssue,
-  attempted,
-  setAttempted,
-}) => {
+const AskQuestion = () => {
+  const [formData, setFormData] = useState({
+    topic: "",
+    workOn: "",
+    tryAchieve: "",
+    issue: "",
+    attempted: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    const response = await getPost();
+    console.log(response);
+  };
+
   return (
     <div>
       <h2 className="h2-format">What's your question?</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className="label-format" htmlFor="topic">
           Topic:
         </label>
@@ -24,9 +30,11 @@ const AskQuestion = ({
             className="topic-format"
             type="text"
             id="topic"
-            value={topic ? topic : ""}
+            value={formData.topic}
             placeholder="Enter your topic..."
-            onChange={(e) => setTopic(e.target.value)}
+            onChange={(e) =>
+              setFormData({ ...formData, topic: e.target.value })
+            }
           />
         </div>
         <label className="label-format" htmlFor="What have you worked on?">
@@ -37,9 +45,11 @@ const AskQuestion = ({
             className="input-format"
             type="text"
             id="workOn"
-            value={workOn ? workOn : ""}
+            value={formData.workOn}
             placeholder=""
-            onChange={(e) => setWorkOn(e.target.value)}
+            onChange={(e) =>
+              setFormData({ ...formData, workOn: e.target.value })
+            }
           />
         </div>
         <label
@@ -53,9 +63,11 @@ const AskQuestion = ({
             className="input-format"
             type="text"
             id="tryAchieve"
-            value={tryAchieve ? tryAchieve : ""}
+            value={formData.tryAchieve}
             placeholder=""
-            onChange={(e) => setTryAchieve(e.target.value)}
+            onChange={(e) =>
+              setFormData({ ...formData, tryAchieve: e.target.value })
+            }
           />
         </div>
         <label
@@ -69,9 +81,11 @@ const AskQuestion = ({
             className="input-format"
             type="text"
             id="issue"
-            value={issue ? issue : ""}
+            value={formData.issue}
             placeholder=""
-            onChange={(e) => setIssue(e.target.value)}
+            onChange={(e) =>
+              setFormData({ ...formData, issue: e.target.value })
+            }
           />
         </div>
         <label className="label-format" htmlFor="What have you attempted?">
@@ -82,13 +96,17 @@ const AskQuestion = ({
             className="input-format"
             type="text"
             id="attempted"
-            value={attempted ? attempted : ""}
+            value={formData.attempted}
             placeholder=""
-            onChange={(e) => setAttempted(e.target.value)}
+            onChange={(e) =>
+              setFormData({ ...formData, attempted: e.target.value })
+            }
           />
         </div>
       </form>
-      <button className="button-format">Ask</button>
+      <button onClick={handleSubmit} className="button-format">
+        Ask
+      </button>
     </div>
   );
 };

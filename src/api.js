@@ -18,6 +18,21 @@ const actualGetQuestions = async () => {
   return data;
 };
 
+const getPost = async () => {
+  const data = {
+    body: undefined,
+    error: undefined,
+  };
+  try {
+    const response = await axios.post(`/api/questions`);
+    data.body = response.data;
+  } catch (err) {
+    console.log(err);
+    data.error = err;
+  }
+  return data;
+}
+
 const getQuestions = async () => {
   const data = {
     body: questions,
@@ -42,4 +57,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, actualGetQuestions };
+export { getQuestions, getQuestionById, getAnswers, actualGetQuestions, getPost };
