@@ -1,0 +1,16 @@
+.h3-format {
+    text-align: left;
+    color: #68628c;
+    padding-left: 2rem;
+  }
+
+  .answered-question-format {
+    color: #68628c;
+    text-align: left;
+    padding-left: 2rem;
+    width: 95%;
+  }
+  
+  .question-info {
+    display: block;
+  }
