@@ -15,6 +15,7 @@ const actualGetQuestions = async () => {
     console.log(err);
     data.error = err;
   }
+  return data;
 };
 
 const getQuestions = async () => {
