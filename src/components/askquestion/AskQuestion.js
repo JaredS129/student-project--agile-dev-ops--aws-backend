@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AskQuestion.css";
+import { getPost } from "../../api";
 
 const AskQuestion = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +11,11 @@ const AskQuestion = () => {
     attempted: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    const response = await getPost();
+    console.log(response);
   };
 
   return (
@@ -44,7 +47,9 @@ const AskQuestion = () => {
             id="workOn"
             value={formData.workOn}
             placeholder=""
-            onChange={(e) =>  setFormData({ ...formData, workOn: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, workOn: e.target.value })
+            }
           />
         </div>
         <label
@@ -60,7 +65,9 @@ const AskQuestion = () => {
             id="tryAchieve"
             value={formData.tryAchieve}
             placeholder=""
-            onChange={(e) => setFormData({ ...formData, tryAchieve: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, tryAchieve: e.target.value })
+            }
           />
         </div>
         <label
@@ -76,7 +83,9 @@ const AskQuestion = () => {
             id="issue"
             value={formData.issue}
             placeholder=""
-            onChange={(e) => setFormData({ ...formData, issue: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, issue: e.target.value })
+            }
           />
         </div>
         <label className="label-format" htmlFor="What have you attempted?">
@@ -89,7 +98,9 @@ const AskQuestion = () => {
             id="attempted"
             value={formData.attempted}
             placeholder=""
-            onChange={(e) => setFormData({ ...formData, attempted: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, attempted: e.target.value })
+            }
           />
         </div>
       </form>
