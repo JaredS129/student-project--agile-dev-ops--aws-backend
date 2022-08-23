@@ -1,7 +1,21 @@
 import questions from "./data/questions.json";
 import singleQuestion from "./data/singleQuestion.json";
 import answers from "./data/answers.json";
+import axios from "axios";
 
+const actualGetQuestions = async () => {
+  const data = {
+    body: undefined,
+    error: undefined,
+  };
+  try {
+    const response = await axios.get(`/api/questions`);
+    data.body = response.data;
+  } catch (err) {
+    console.log(err);
+    data.error = err;
+  }
+};
 
 const getQuestions = async () => {
   const data = {
@@ -15,8 +29,8 @@ const getQuestionById = async (id) => {
   const data = {
     body: singleQuestion,
     error: undefined,
-};
-return data;
+  };
+  return data;
 };
 
 const getAnswers = async () => {
@@ -27,4 +41,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers };
+export { getQuestions, getQuestionById, getAnswers, actualGetQuestions };
