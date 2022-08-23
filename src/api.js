@@ -19,7 +19,18 @@ const actualGetQuestions = async () => {
 };
 
 const getPost = async () => {
-  return "hello"
+  const data = {
+    body: undefined,
+    error: undefined,
+  };
+  try {
+    const response = await axios.post(`/api/questions`);
+    data.body = response.data;
+  } catch (err) {
+    console.log(err);
+    data.error = err;
+  }
+  return data;
 }
 
 const getQuestions = async () => {
