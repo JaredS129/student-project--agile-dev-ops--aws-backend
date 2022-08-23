@@ -1,5 +1,10 @@
 import "./AskQuestion.css";
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log("You clicked submit.");
+};
+
 const AskQuestion = ({
   topic,
   setTopic,
@@ -15,7 +20,7 @@ const AskQuestion = ({
   return (
     <div>
       <h2 className="h2-format">What's your question?</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className="label-format" htmlFor="topic">
           Topic:
         </label>
@@ -88,7 +93,9 @@ const AskQuestion = ({
           />
         </div>
       </form>
-      <button className="button-format">Ask</button>
+      <button onClick={handleSubmit} className="button-format">
+        Ask
+      </button>
     </div>
   );
 };

@@ -18,6 +18,10 @@ const actualGetQuestions = async () => {
   return data;
 };
 
+const getPost = async () => {
+  
+}
+
 const getQuestions = async () => {
   const data = {
     body: questions,
