@@ -8,21 +8,6 @@ const getQuestions = async (answered, topic) => {
     error: undefined,
   };
   try {
-    if (answered === undefined && topic === undefined) {
-      const response = await axios.get(`/api/questions`);
-      data.body = response.data;
-      console.log(`fetched: /api/questions`);
-    }
-    if (answered === undefined) {
-      const response = await axios.get(`/api/questions?topic=${topic}`);
-      data.body = response.data;
-      console.log(`fetched: /api/questions?topic=${topic}`);
-    }
-    if (topic === undefined) {
-      const response = await axios.get(`/api/questions?answered=${answered}`);
-      data.body = response.data;
-      console.log(`fetched: /api/questions?answered=${answered}`);
-    }
     if (topic && answered) {
       const response = await axios.get(
         `/api/questions?answered=${answered}&topic=${topic}`
@@ -31,6 +16,19 @@ const getQuestions = async (answered, topic) => {
       console.log(
         `fetched: /api/questions?answered=${answered}&topic=${topic}`
       );
+    }
+    if (answered === undefined && topic === undefined) {
+      const response = await axios.get(`/api/questions`);
+      data.body = response.data;
+      console.log(`fetched: /api/questions`);
+    } else if (answered === undefined) {
+      const response = await axios.get(`/api/questions?topic=${topic}`);
+      data.body = response.data;
+      console.log(`fetched: /api/questions?topic=${topic}`);
+    } else if (topic === undefined) {
+      const response = await axios.get(`/api/questions?answered=${answered}`);
+      data.body = response.data;
+      console.log(`fetched: /api/questions?answered=${answered}`);
     }
   } catch (err) {
     data.error = err;
