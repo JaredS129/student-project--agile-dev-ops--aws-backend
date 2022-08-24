@@ -17,7 +17,7 @@ const AppContainer = ({ children, searchText, setSearchText }) => {
   );
 };
 
-function App() {
+const App = () => {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -57,14 +57,6 @@ function App() {
     );
   }
 
-  if (questions.length === 0) {
-    return (
-      <AppContainer>
-        <p>No questions yet!</p>
-      </AppContainer>
-    );
-  }
-
   return (
     <AppContainer searchText={searchText} setSearchText={setSearchText}>
       <Routes>
@@ -82,6 +74,6 @@ function App() {
       </Routes>
     </AppContainer>
   );
-}
+};
 
 export default App;
