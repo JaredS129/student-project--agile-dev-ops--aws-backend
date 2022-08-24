@@ -1,6 +1,11 @@
 .answer-container {
+    display: grid;
+    grid-template-areas: 
+    "title solution"
+    "body body"
+    "date date";
     background: #ffffff;
-    padding: 1rem 2rem;
+    padding: 0 2rem 1rem 2rem;
     margin: 3rem 2rem;
     box-shadow: 0.25rem 0.25rem 0.5rem #0000002c;
     list-style: none;
@@ -8,17 +13,20 @@
 }
 
 .answer-title {
-    
+    grid-area: title;
 }
 
 .answer-body {
-
+    grid-area: body;
 }
 
 .answer-solution {
-
+    grid-area: solution;
+    text-align: right;
+    padding-top: 1rem;
 }
 
 .answer-date {
-
+    grid-area: date;
+    text-align: right;
 }
