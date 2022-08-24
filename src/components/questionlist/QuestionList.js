@@ -61,7 +61,7 @@ const QuestionList = ({
                 title={question.title}
                 topic={question.topic}
                 summary={question.summary}
-                isAnswered={question.isAnswered}
+                isAnswered={question.is_answered}
               />
             </div>
           ))}
