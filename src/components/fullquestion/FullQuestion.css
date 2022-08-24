@@ -1,16 +1,23 @@
 .h3-format {
-    text-align: left;
-    color: #68628c;
-    padding-left: 2rem;
-  }
+  text-align: left;
+  color: #68628c;
+  padding-left: 2rem;
+}
 
-  .answered-question-format {
-    color: #68628c;
-    text-align: left;
-    padding-left: 2rem;
-    width: 95%;
-  }
-  
-  .question-info {
-    display: block;
-  }
+.answered-question-format {
+  color: #68628c;
+  text-align: left;
+  padding-left: 2rem;
+  width: 95%;
+}
+
+.question-info {
+  padding: 2rem;
+  color: #68628c;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.info-author {
+  font-weight: bold;
+}

@@ -19,7 +19,7 @@ test("renders a full question", () => {
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
     "TestQuestion"
   );
-  expect(screen.getByText("testTopic")).toBeInTheDocument();
+  expect(screen.getByText("- testTopic")).toBeInTheDocument();
   expect(screen.getByText("workOnTest")).toBeInTheDocument();
   expect(screen.getByText("tryAchieveTest")).toBeInTheDocument();
   expect(screen.getByText("issueTest")).toBeInTheDocument();

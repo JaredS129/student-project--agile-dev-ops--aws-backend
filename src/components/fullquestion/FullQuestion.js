@@ -32,14 +32,13 @@ const FullQuestion = (props) => {
         <p className="answered-question-format">
           {props.attempted ?? "placeholder"}
         </p>
-        <h3>Date asked</h3>
         <div className="question-info">
-          <p>{niceDate ?? "placeholder"}</p>
-          <h3>Topic</h3>
-          <p>{props.topic ?? "placeholder"}</p>
-          <p>
-            asked by: <span>{props.author ?? "placeholder"}</span>
-          </p>
+          <span>{niceDate ?? "placeholder"}</span>
+          <span> - {props.topic ?? "placeholder"} </span>
+          <span>
+            - asked by:{" "}
+            <span className="info-author">{props.author ?? "placeholder"}</span>
+          </span>
         </div>
       </div>
       <AnswerList answers={answers["1"]} />
