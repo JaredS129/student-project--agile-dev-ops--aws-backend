@@ -28,9 +28,14 @@ const filterByTopic = (topic, useTopic) => {
 const QuestionList = ({ questions, searchText }) => {
   const [useAnswered, setUseAnswered] = useState("both");
   const [useTopic, setUseTopic] = useState("All");
+  if (questions.length === 0) {
+    return <p>No questions yet!</p>;
+  }
   return (
     <div>
-      <Link className="link-format" to="/askQuestion">Ask Question</Link>
+      <Link className="link-format" to="/askQuestion">
+        Ask Question
+      </Link>
       <FilterForm
         useAnswered={useAnswered}
         setUseAnswered={setUseAnswered}
