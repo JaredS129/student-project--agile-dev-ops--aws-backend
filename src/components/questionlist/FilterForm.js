@@ -10,7 +10,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
         name="answered"
         value={answered}
         onChange={(x) => {
-          setAnswered(x.target.value);
+          setAnswered(x.target.value === "Both" ? undefined : x.target.value);
         }}
       >
         <option value={false}>Not answered</option>
@@ -24,7 +24,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
         name="topics"
         value={topic}
         onChange={(x) => {
-          setTopic(x.target.value);
+          setTopic(x.target.value === "All" ? undefined : x.target.value);
         }}
       >
         <option value={undefined}>All</option>
