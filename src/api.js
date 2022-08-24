@@ -1,9 +1,8 @@
-import questions from "./data/questions.json";
 import singleQuestion from "./data/singleQuestion.json";
 import answers from "./data/answers.json";
 import axios from "axios";
 
-const actualGetQuestions = async () => {
+const getQuestions = async () => {
   const data = {
     body: undefined,
     error: undefined,
@@ -31,14 +30,6 @@ const getPost = async () => {
     data.error = err;
   }
   return data;
-}
-
-const getQuestions = async () => {
-  const data = {
-    body: questions,
-    error: undefined,
-  };
-  return data;
 };
 
 const getQuestionById = async (id) => {
@@ -57,4 +48,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, actualGetQuestions, getPost };
+export { getQuestions, getQuestionById, getAnswers, getPost };
