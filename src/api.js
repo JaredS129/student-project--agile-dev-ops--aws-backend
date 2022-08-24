@@ -11,7 +11,6 @@ const getQuestions = async () => {
     const response = await axios.get(`/api/questions`);
     data.body = response.data;
   } catch (err) {
-    console.log(err);
     data.error = err;
   }
   return data;
@@ -23,10 +22,9 @@ const getPost = async () => {
     error: undefined,
   };
   try {
-    const response = await axios.post(`/api/questions`);
+    const response = await axios.post(`/api/questions`, {});
     data.body = response.data;
   } catch (err) {
-    console.log(err);
     data.error = err;
   }
   return data;
