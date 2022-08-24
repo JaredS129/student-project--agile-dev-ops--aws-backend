@@ -13,9 +13,9 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
           setAnswered(x.target.value);
         }}
       >
-        <option value="unanswered">Not answered</option>
-        <option value="answered">Answered</option>
-        <option value="both">Both</option>
+        <option value={false}>Not answered</option>
+        <option value={true}>Answered</option>
+        <option value={undefined}>Both</option>
       </select>
       <label htmlFor="topics">Topic:</label>
       <select
@@ -27,8 +27,8 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
           setTopic(x.target.value);
         }}
       >
-        <option value="All">All</option>
-        <option value="How-to">How-to</option>
+        <option value={undefined}>All</option>
+        <option value="how-to">How-to</option>
         <option value="React">React</option>
         <option value="Bugs">Bugs</option>
       </select>
