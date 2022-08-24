@@ -13,9 +13,9 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
           setAnswered(x.target.value === "Both" ? undefined : x.target.value);
         }}
       >
+        <option value={undefined}>Both</option>
         <option value={false}>Not answered</option>
         <option value={true}>Answered</option>
-        <option value={undefined}>Both</option>
       </select>
       <label htmlFor="topics">Topic:</label>
       <select
