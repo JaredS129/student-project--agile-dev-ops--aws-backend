@@ -1,4 +1,3 @@
-import questions from "./data/questions.json";
 import singleQuestion from "./data/singleQuestion.json";
 import answers from "./data/answers.json";
 import axios from "axios";
