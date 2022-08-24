@@ -43,10 +43,10 @@ describe("QuestionList", () => {
   test("renders the correct answered status", () => {
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
-      const { isAnswered } = questions[index];
+      const { is_answered } = questions[index];
       expect(
-        getByText(isAnswered ? "Solved" : "Not answered")
-      ).toHaveTextContent(isAnswered ? "Solved" : "Not answered");
+        getByText(is_answered ? "Solved" : "Not answered")
+      ).toHaveTextContent(is_answered ? "Solved" : "Not answered");
     });
   });
 });

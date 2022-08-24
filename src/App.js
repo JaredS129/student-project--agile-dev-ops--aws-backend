@@ -24,22 +24,24 @@ const App = () => {
   const [error, setError] = useState("");
   const [searchText, setSearchText] = useState("");
 
-  const fetchData = async () => {
-    const data = await getQuestions();
-
-    if (data.error) {
-      setIsError(true);
-      setIsLoading(false);
-      setError(`Error: API call returned a status ${data.error}`);
-      return;
-    }
-    setQuestions(data.body);
-    setIsLoading(false);
-  };
+  const [answered, setAnswered] = useState(undefined);
+  const [topic, setTopic] = useState(undefined);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const data = await getQuestions(answered, topic);
+
+      if (data.error) {
+        setIsError(true);
+        setIsLoading(false);
+        setError(`Error: API call returned a status ${data.error}`);
+        return;
+      }
+      setQuestions(data.body);
+      setIsLoading(false);
+    };
     fetchData();
-  }, []);
+  }, [answered, topic]);
 
   if (isLoading) {
     return (
@@ -63,7 +65,14 @@ const App = () => {
         <Route
           path="/"
           element={
-            <QuestionList questions={questions} searchText={searchText} />
+            <QuestionList
+              questions={questions}
+              searchText={searchText}
+              answered={answered}
+              setAnswered={setAnswered}
+              topic={topic}
+              setTopic={setTopic}
+            />
           }
         ></Route>
         <Route path="/askQuestion" element={<AskQuestion />}></Route>

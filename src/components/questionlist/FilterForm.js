@@ -1,32 +1,34 @@
 import "./FilterForm.css";
 
-const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
+const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
   return (
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
-      <select className="filter-format"
+      <select
+        className="filter-format"
         id="answered"
         name="answered"
-        value={useAnswered}
+        value={answered}
         onChange={(x) => {
-          setUseAnswered(x.target.value);
+          setAnswered(x.target.value === "Both" ? undefined : x.target.value);
         }}
       >
-        <option value="unanswered">Not answered</option>
-        <option value="answered">Answered</option>
-        <option value="both">Both</option>
+        <option value={undefined}>Both</option>
+        <option value={false}>Not answered</option>
+        <option value={true}>Answered</option>
       </select>
       <label htmlFor="topics">Topic:</label>
-      <select className="filter-format"
+      <select
+        className="filter-format"
         id="topics"
         name="topics"
-        value={useTopic}
+        value={topic}
         onChange={(x) => {
-          setUseTopic(x.target.value);
+          setTopic(x.target.value === "All" ? undefined : x.target.value);
         }}
       >
-        <option value="All">All</option>
-        <option value="How-to">How-to</option>
+        <option value={undefined}>All</option>
+        <option value="how-to">How-to</option>
         <option value="React">React</option>
         <option value="Bugs">Bugs</option>
       </select>
