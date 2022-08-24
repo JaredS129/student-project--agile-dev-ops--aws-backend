@@ -3,9 +3,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5rem, 5rem, 1fr;
   grid-template-areas:
-    "title title"
-    "topic isanswered"
-    "summary summary";
+    "title isanswered"
+    "summary topic";
 }
 
 .title-format {
@@ -24,6 +23,8 @@
   border-radius: 0.3rem;
   padding: 0.25rem;
   width: fit-content;
+  justify-self: end;
+  align-self: center;
 }
 
 .answer-format {
@@ -40,6 +41,7 @@
   border-radius: 0.3rem;
   padding: 0.25rem;
   width: fit-content;
+  align-self: center;
 }
 
 .summary-format {
