@@ -1,15 +1,16 @@
 import "./FilterForm.css";
 
-const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
+const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
   return (
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
-      <select className="filter-format"
+      <select
+        className="filter-format"
         id="answered"
         name="answered"
-        value={useAnswered}
+        value={answered}
         onChange={(x) => {
-          setUseAnswered(x.target.value);
+          setAnswered(x.target.value);
         }}
       >
         <option value="unanswered">Not answered</option>
@@ -17,12 +18,13 @@ const FilterForm = ({ useAnswered, setUseAnswered, useTopic, setUseTopic }) => {
         <option value="both">Both</option>
       </select>
       <label htmlFor="topics">Topic:</label>
-      <select className="filter-format"
+      <select
+        className="filter-format"
         id="topics"
         name="topics"
-        value={useTopic}
+        value={topic}
         onChange={(x) => {
-          setUseTopic(x.target.value);
+          setTopic(x.target.value);
         }}
       >
         <option value="All">All</option>

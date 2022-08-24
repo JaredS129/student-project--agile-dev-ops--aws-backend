@@ -4,30 +4,35 @@ import React, { useState } from "react";
 import "./QuestionList.css";
 import { Link } from "react-router-dom";
 
-const filterByAnswered = (isAnswered, useAnswered) => {
-  // if useAnswered is both then return true
-  if (useAnswered === "both") {
-    return true;
-  }
-  if (useAnswered === "answered" && isAnswered) {
-    return true;
-  }
-  if (useAnswered === "unanswered" && !isAnswered) {
-    return true;
-  }
-  return false;
-};
+// const filterByAnswered = (isAnswered, useAnswered) => {
+//   // if useAnswered is both then return true
+//   if (useAnswered === "both") {
+//     return true;
+//   }
+//   if (useAnswered === "answered" && isAnswered) {
+//     return true;
+//   }
+//   if (useAnswered === "unanswered" && !isAnswered) {
+//     return true;
+//   }
+//   return false;
+// };
 
-const filterByTopic = (topic, useTopic) => {
-  if (useTopic === "All") {
-    return true;
-  }
-  return topic === useTopic;
-};
+// const filterByTopic = (topic, useTopic) => {
+//   if (useTopic === "All") {
+//     return true;
+//   }
+//   return topic === useTopic;
+// };
 
-const QuestionList = ({ questions, searchText }) => {
-  const [useAnswered, setUseAnswered] = useState("both");
-  const [useTopic, setUseTopic] = useState("All");
+const QuestionList = ({
+  questions,
+  searchText,
+  answered,
+  setAnswered,
+  topic,
+  setTopic,
+}) => {
   if (questions.length === 0) {
     return <p>No questions yet!</p>;
   }
@@ -37,10 +42,10 @@ const QuestionList = ({ questions, searchText }) => {
         Ask Question
       </Link>
       <FilterForm
-        useAnswered={useAnswered}
-        setUseAnswered={setUseAnswered}
-        useTopic={useTopic}
-        setUseTopic={setUseTopic}
+        answered={answered}
+        setAnswered={setAnswered}
+        topic={topic}
+        setTopic={setTopic}
       />
       <ul>
         {questions
@@ -49,10 +54,6 @@ const QuestionList = ({ questions, searchText }) => {
               .toLowerCase()
               .includes(searchText ? searchText.toLowerCase() : "")
           )
-          .filter((question) =>
-            filterByAnswered(question.isAnswered, useAnswered)
-          )
-          .filter((question) => filterByTopic(question.topic, useTopic))
           .map((question) => (
             <div className="question-container" key={question.question_id}>
               <Question

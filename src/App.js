@@ -24,6 +24,9 @@ const App = () => {
   const [error, setError] = useState("");
   const [searchText, setSearchText] = useState("");
 
+  const [answered, setAnswered] = useState();
+  const [topic, setTopic] = useState();
+
   const fetchData = async () => {
     const data = await getQuestions();
 
@@ -39,7 +42,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [answered, topic]);
 
   if (isLoading) {
     return (
@@ -63,7 +66,14 @@ const App = () => {
         <Route
           path="/"
           element={
-            <QuestionList questions={questions} searchText={searchText} />
+            <QuestionList
+              questions={questions}
+              searchText={searchText}
+              answered={answered}
+              setAnswered={setAnswered}
+              topic={topic}
+              setTopic={setTopic}
+            />
           }
         ></Route>
         <Route path="/askQuestion" element={<AskQuestion />}></Route>
