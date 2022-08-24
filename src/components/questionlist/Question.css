@@ -55,17 +55,15 @@
 .topic-layout {
   font-family: "Poppins";
   grid-area: topic;
-  font-style: italic
+  font-style: italic;
 }
 
-@media (min-width: 50rem){
+@media (min-width: 50rem) {
   .question-grid {
     grid-template-columns: 1fr 10rem;
     grid-template-rows: 3rem, 1fr;
     grid-template-areas:
-    "title isanswered"
-    "summary topic";
-
+      "title isanswered"
+      "summary topic";
   }
-
 }
