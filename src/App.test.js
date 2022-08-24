@@ -54,7 +54,23 @@ test("renders error if error from api call", async () => {
   );
 
   const errorText = await screen.findByText(
-    /Request failed with status code 500/i
+    /Request failed with status code 500/
   );
   expect(errorText).toBeInTheDocument();
+});
+
+test("renders no questions yet if no questions", async () => {
+  server.use(
+    rest.get("/api/questions", (req, res, ctx) => {
+      return res(ctx.json([]));
+    })
+  );
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+
+  const noQuestionText = await screen.findByText(/No questions yet!/);
+  expect(noQuestionText).toBeInTheDocument();
 });
