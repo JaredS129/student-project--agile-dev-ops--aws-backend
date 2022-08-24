@@ -24,23 +24,22 @@ const App = () => {
   const [error, setError] = useState("");
   const [searchText, setSearchText] = useState("");
 
-  const [answered, setAnswered] = useState();
-  const [topic, setTopic] = useState();
-
-  const fetchData = async () => {
-    const data = await getQuestions();
-
-    if (data.error) {
-      setIsError(true);
-      setIsLoading(false);
-      setError(`Error: API call returned a status ${data.error}`);
-      return;
-    }
-    setQuestions(data.body);
-    setIsLoading(false);
-  };
+  const [answered, setAnswered] = useState(undefined);
+  const [topic, setTopic] = useState(undefined);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const data = await getQuestions(answered, topic);
+
+      if (data.error) {
+        setIsError(true);
+        setIsLoading(false);
+        setError(`Error: API call returned a status ${data.error}`);
+        return;
+      }
+      setQuestions(data.body);
+      setIsLoading(false);
+    };
     fetchData();
   }, [answered, topic]);
 

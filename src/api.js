@@ -11,20 +11,26 @@ const getQuestions = async (answered, topic) => {
     if (answered === undefined && topic === undefined) {
       const response = await axios.get(`/api/questions`);
       data.body = response.data;
+      console.log(`fetched: /api/questions`);
     }
     if (answered === undefined) {
       const response = await axios.get(`/api/questions?topic=${topic}`);
       data.body = response.data;
+      console.log(`fetched: /api/questions?topic=${topic}`);
     }
     if (topic === undefined) {
       const response = await axios.get(`/api/questions?answered=${answered}`);
       data.body = response.data;
+      console.log(`fetched: /api/questions?answered=${answered}`);
     }
     if (topic && answered) {
       const response = await axios.get(
         `/api/questions?answered=${answered}&topic=${topic}`
       );
       data.body = response.data;
+      console.log(
+        `fetched: /api/questions?answered=${answered}&topic=${topic}`
+      );
     }
   } catch (err) {
     data.error = err;
