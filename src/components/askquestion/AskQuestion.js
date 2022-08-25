@@ -14,7 +14,7 @@ const AskQuestion = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    const response = await postQuestion();
+    const response = await postQuestion(formData);
     console.log(response);
   };
 
