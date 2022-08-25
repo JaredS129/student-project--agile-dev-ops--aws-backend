@@ -16,18 +16,21 @@ const getQuestions = async () => {
   return data;
 };
 
-const postQuestion = async () => {
+const postQuestion = async (formData) => { 
   const data = {
     body: undefined,
     error: undefined,
   };
   try {
-    const response = await axios.post(`/api/questions`, {});
+    const response = await axios.post(`/api/questions`, {
+      body: formData
+    });
     data.body = response.data;
   } catch (err) {
     data.error = err;
   }
-  return data;
+  console.log(data.body)
+  return data.body;
 };
 
 const getQuestionById = async (id) => {
