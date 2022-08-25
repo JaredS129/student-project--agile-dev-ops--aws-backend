@@ -6,7 +6,7 @@ const AskQuestion = () => {
   const [formData, setFormData] = useState({
     title: "",
     working_on: "",
-    try_achieve: "",
+    trying_achieve: "",
     problem: "",
     tried: "",
   });
@@ -23,17 +23,17 @@ const AskQuestion = () => {
       <h2 className="h2-format">What's your question?</h2>
       <form onSubmit={handleSubmit}>
         <label className="label-format" htmlFor="topic">
-          Topic:
+          Title:
         </label>
         <div>
           <input
             className="topic-format"
             type="text"
-            id="topic"
-            value={formData.topic}
+            id="title"
+            value={formData.title}
             placeholder="Enter your topic..."
             onChange={(e) =>
-              setFormData({ ...formData, topic: e.target.value })
+              setFormData({ ...formData, title: e.target.value })
             }
           />
         </div>
@@ -44,11 +44,11 @@ const AskQuestion = () => {
           <input
             className="input-format"
             type="text"
-            id="workOn"
-            value={formData.workOn}
+            id="working_on"
+            value={formData.working_on}
             placeholder=""
             onChange={(e) =>
-              setFormData({ ...formData, workOn: e.target.value })
+              setFormData({ ...formData, working_on: e.target.value })
             }
           />
         </div>
@@ -62,11 +62,11 @@ const AskQuestion = () => {
           <input
             className="input-format"
             type="text"
-            id="tryAchieve"
-            value={formData.tryAchieve}
+            id="trying_achieve"
+            value={formData.trying_achieve}
             placeholder=""
             onChange={(e) =>
-              setFormData({ ...formData, tryAchieve: e.target.value })
+              setFormData({ ...formData, trying_achieve: e.target.value })
             }
           />
         </div>
@@ -80,11 +80,11 @@ const AskQuestion = () => {
           <input
             className="input-format"
             type="text"
-            id="issue"
-            value={formData.issue}
+            id="problem"
+            value={formData.problem}
             placeholder=""
             onChange={(e) =>
-              setFormData({ ...formData, issue: e.target.value })
+              setFormData({ ...formData, problem: e.target.value })
             }
           />
         </div>
@@ -95,11 +95,11 @@ const AskQuestion = () => {
           <input
             className="input-format"
             type="text"
-            id="attempted"
-            value={formData.attempted}
+            id="tried"
+            value={formData.tried}
             placeholder=""
             onChange={(e) =>
-              setFormData({ ...formData, attempted: e.target.value })
+              setFormData({ ...formData, tried: e.target.value })
             }
           />
         </div>
