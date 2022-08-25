@@ -35,14 +35,16 @@
   font-size: 1rem;
   padding: 0rem 0.125rem;
   margin-right: 2rem;
+  cursor: not-allowed;
 }
 
 .dashboard-format {
   color: white;
   border-radius: 0.2rem;
-  background-color: #68628c;;
+  background-color: #68628c;
   font-size: 1rem;
   line-height: 2rem;
   padding: 0rem 0.125rem;
   margin-right: 2rem;
+  cursor: not-allowed;
 }
