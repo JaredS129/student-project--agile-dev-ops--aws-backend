@@ -16,7 +16,7 @@ const getQuestions = async () => {
   return data;
 };
 
-const getPost = async () => {
+const postQuestion = async () => {
   const data = {
     body: undefined,
     error: undefined,
@@ -46,4 +46,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, getPost };
+export { getQuestions, getQuestionById, getAnswers, postQuestion };

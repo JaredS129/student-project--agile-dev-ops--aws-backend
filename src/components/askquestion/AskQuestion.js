@@ -1,20 +1,20 @@
 import { useState } from "react";
 import "./AskQuestion.css";
-import { getPost } from "../../api";
+import { postQuestion } from "../../api";
 
 const AskQuestion = () => {
   const [formData, setFormData] = useState({
-    topic: "",
-    workOn: "",
-    tryAchieve: "",
-    issue: "",
-    attempted: "",
+    title: "",
+    working_on: "",
+    try_achieve: "",
+    problem: "",
+    tried: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    const response = await getPost();
+    const response = await postQuestion();
     console.log(response);
   };
 
