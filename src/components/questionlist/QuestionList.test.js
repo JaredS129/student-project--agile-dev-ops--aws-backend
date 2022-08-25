@@ -50,3 +50,13 @@ describe("QuestionList", () => {
     });
   });
 });
+
+describe("QuestionList filtering", () => {
+  const questions = questionData;
+  render(
+    <BrowserRouter>
+      <QuestionList questions={questions} />
+    </BrowserRouter>
+  );
+  const listItems = screen.getAllByRole("listitem");
+});
