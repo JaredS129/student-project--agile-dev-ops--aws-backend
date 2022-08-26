@@ -1,10 +1,8 @@
 import {
   fireEvent,
-  getByTestId,
   render,
   screen,
   waitFor,
-  waitForElementToBeRemoved,
   within,
 } from "@testing-library/react";
 import QuestionList from "./QuestionList";
@@ -145,4 +143,15 @@ describe("QuestionList filtering", () => {
     });
     expect(topics).toHaveLength(6);
   });
+});
+
+describe("QuestionList filtering", () => {
+  // const questions = questionData;
+  const renderScreen = () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+  };
 });

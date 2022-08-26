@@ -10,17 +10,21 @@ export const handlers = [
     if (!answered && !topic) {
       return res(ctx.json(questionList));
     } else if (answered && topic) {
+      const answeredParam = answered === "true" ? true : false;
       return res(
         ctx.json(
           questionList
-            .filter((question) => question.isAnswered === answered)
+            .filter((question) => question.isAnswered === answeredParam)
             .filter((question) => question.topic === topic)
         )
       );
     } else if (answered) {
+      const answeredParam = answered === "true" ? true : false;
       return res(
         ctx.json(
-          questionList.filter((question) => question.isAnswered === answered)
+          questionList.filter(
+            (question) => question.isAnswered === answeredParam
+          )
         )
       );
     } else if (topic) {
