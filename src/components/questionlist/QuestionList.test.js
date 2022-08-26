@@ -1,7 +1,26 @@
-import { render, screen, within } from "@testing-library/react";
+import {
+  fireEvent,
+  getByTestId,
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+  within,
+} from "@testing-library/react";
 import QuestionList from "./QuestionList";
 import questionData from "../../data/questions.json";
 import { BrowserRouter } from "react-router-dom";
+import App from "../../App";
+
+const { server } = require("../../mocks/server");
+
+beforeAll(() => {
+  server.listen();
+});
+
+afterAll(() => {
+  server.close();
+});
 
 describe("QuestionList", () => {
   const questions = questionData;
@@ -52,11 +71,75 @@ describe("QuestionList", () => {
 });
 
 describe("QuestionList filtering", () => {
-  const questions = questionData;
-  render(
-    <BrowserRouter>
-      <QuestionList questions={questions} />
-    </BrowserRouter>
-  );
-  const listItems = screen.getAllByRole("listitem");
+  // const questions = questionData;
+  const renderScreen = () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+  };
+
+  test("renders only React topic questions", async () => {
+    renderScreen();
+
+    let topicDropdown;
+    let topics;
+
+    await waitFor(() => {
+      topicDropdown = screen.getByTestId("topic-dropdown");
+    });
+    fireEvent.change(topicDropdown, { target: { value: "React" } });
+    await waitFor(() => {
+      expect(topicDropdown).toHaveValue("React");
+    });
+    await waitFor(() => {
+      topics = screen.getAllByTestId("topic");
+    });
+    topics.forEach((topic) => {
+      expect(topic).toHaveTextContent("React");
+    });
+  });
+
+  test("renders only Bugs topic questions", async () => {
+    renderScreen();
+
+    let topicDropdown;
+    let topics;
+
+    await waitFor(() => {
+      topicDropdown = screen.getByTestId("topic-dropdown");
+    });
+    fireEvent.change(topicDropdown, { target: { value: "Bugs" } });
+    await waitFor(() => {
+      expect(topicDropdown).toHaveValue("Bugs");
+    });
+    await waitFor(() => {
+      topics = screen.getAllByTestId("topic");
+    });
+    topics.forEach((topic) => {
+      expect(topic).toHaveTextContent("Bugs");
+    });
+  });
+
+  test("renders only How-to topic questions", async () => {
+    renderScreen();
+
+    let topicDropdown;
+    let topics;
+
+    await waitFor(() => {
+      topicDropdown = screen.getByTestId("topic-dropdown");
+    });
+    fireEvent.change(topicDropdown, { target: { value: "how-to" } });
+    await waitFor(() => {
+      expect(topicDropdown).toHaveValue("how-to");
+    });
+    await waitFor(() => {
+      topics = screen.getAllByTestId("topic");
+    });
+    topics.forEach((topic) => {
+      expect(topic).toHaveTextContent("how-to");
+    });
+  });
 });

@@ -30,7 +30,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
         }}
       >
         <option value={undefined}>All</option>
-        <option value="how-to">How-to</option>
+        <option value="how-to">how-to</option>
         <option value="React">React</option>
         <option value="Bugs">Bugs</option>
       </select>

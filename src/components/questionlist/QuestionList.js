@@ -38,6 +38,7 @@ const QuestionList = ({
         topic={topic}
         setTopic={setTopic}
       />
+      {!topic ? null : <p data-testid="test-topic">{topic}</p>}
       <ul>
         {questions
           .filter((question) =>
