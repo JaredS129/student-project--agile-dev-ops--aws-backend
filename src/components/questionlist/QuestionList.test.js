@@ -99,6 +99,7 @@ describe("QuestionList filtering", () => {
     topics.forEach((topic) => {
       expect(topic).toHaveTextContent("React");
     });
+    expect(topics).toHaveLength(3);
   });
 
   test("renders only Bugs topic questions", async () => {
@@ -120,6 +121,7 @@ describe("QuestionList filtering", () => {
     topics.forEach((topic) => {
       expect(topic).toHaveTextContent("Bugs");
     });
+    expect(topics).toHaveLength(6);
   });
 
   test("renders only How-to topic questions", async () => {
@@ -141,5 +143,6 @@ describe("QuestionList filtering", () => {
     topics.forEach((topic) => {
       expect(topic).toHaveTextContent("how-to");
     });
+    expect(topics).toHaveLength(6);
   });
 });
