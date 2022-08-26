@@ -29,7 +29,6 @@ const postQuestion = async (formData) => {
   } catch (err) {
     data.error = err;
   }
-  console.log(data.body)
   return data.body;
 };
 
