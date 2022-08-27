@@ -13,8 +13,8 @@ const AskQuestion = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const response = await postQuestion(formData);
-    alert("Question Asked")
+    await postQuestion(formData);
+    alert("Question Asked");
   };
 
   return (
