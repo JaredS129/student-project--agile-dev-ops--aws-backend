@@ -30,18 +30,20 @@ const getQuestions = async (answered, topic) => {
   return data;
 };
 
-const getPost = async () => {
+const postQuestion = async (formData) => { 
   const data = {
     body: undefined,
     error: undefined,
   };
   try {
-    const response = await axios.post(`/api/questions`, {});
+    const response = await axios.post(`/api/questions`, {
+      body: formData
+    });
     data.body = response.data;
   } catch (err) {
     data.error = err;
   }
-  return data;
+  return data.body;
 };
 
 const getQuestionById = async (id) => {
@@ -60,4 +62,4 @@ const getAnswers = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, getPost };
+export { getQuestions, getQuestionById, getAnswers, postQuestion };

@@ -6,7 +6,7 @@ test("renders ask question component", () => {
     <AskQuestion>
     </AskQuestion>
   );
-  expect(screen.getByText("Topic:")).toBeInTheDocument();
+  expect(screen.getByText("Title:")).toBeInTheDocument();
   expect(screen.getByText("What have you worked on?")).toBeInTheDocument();
   expect(screen.getByText("What are you trying to achieve?")).toBeInTheDocument();
   expect(screen.getByText("What is the issue you are having?")).toBeInTheDocument();
