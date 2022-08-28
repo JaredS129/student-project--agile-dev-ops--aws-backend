@@ -1,4 +1,9 @@
 const sortQuestions = (questions) => {
+  if (!Array.isArray(questions)) {
+    return {
+      error: "incorrect input to sortQuestions function",
+    };
+  }
   let sortedQuestions = [];
   const answered = questions.filter(
     (question) => question.is_answered === true
