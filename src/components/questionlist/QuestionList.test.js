@@ -144,14 +144,3 @@ describe("QuestionList filtering", () => {
     expect(topics).toHaveLength(6);
   });
 });
-
-describe("QuestionList filtering", () => {
-  // const questions = questionData;
-  const renderScreen = () => {
-    render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
-  };
-});
