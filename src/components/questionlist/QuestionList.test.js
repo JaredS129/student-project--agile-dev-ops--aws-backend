@@ -7,6 +7,7 @@ import {
 } from "@testing-library/react";
 import QuestionList from "./QuestionList";
 import questionData from "../../data/questions.json";
+import sortedQuestions from "../../data/sortedQuestions.json";
 import { BrowserRouter } from "react-router-dom";
 import App from "../../App";
 
@@ -21,46 +22,70 @@ afterAll(() => {
 });
 
 describe("QuestionList", () => {
-  const questions = questionData;
-  render(
-    <BrowserRouter>
-      <QuestionList questions={questions} />
-    </BrowserRouter>
-  );
-  const listItems = screen.getAllByRole("listitem");
+  const renderQuestions = () => {
+    render(
+      <BrowserRouter>
+        <QuestionList questions={questions} />
+      </BrowserRouter>
+    );
+  };
 
-  test("renders a list of questions", () => {
+  const questions = questionData;
+
+  let listItems;
+
+  test("renders a list of questions", async () => {
+    renderQuestions();
+    await waitFor(() => {
+      listItems = screen.getAllByRole("listitem");
+    });
     expect(listItems).toHaveLength(questions.length);
   });
 
-  test("renders the correct titles", () => {
+  test("renders the correct titles", async () => {
+    renderQuestions();
+    await waitFor(() => {
+      listItems = screen.getAllByRole("listitem");
+    });
     listItems.forEach((item, index) => {
       const { getByRole } = within(item);
-      const { title } = questions[index];
+      const { title } = sortedQuestions[index];
       expect(getByRole("heading", { level: 3 })).toHaveTextContent(title);
     });
   });
 
-  test("renders the correct summaries", () => {
+  test("renders the correct summaries", async () => {
+    renderQuestions();
+    await waitFor(() => {
+      listItems = screen.getAllByRole("listitem");
+    });
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
-      const { summary } = questions[index];
+      const { summary } = sortedQuestions[index];
       expect(getByText(summary)).toHaveTextContent(summary);
     });
   });
 
-  test("renders the correct topic", () => {
+  test("renders the correct topic", async () => {
+    renderQuestions();
+    await waitFor(() => {
+      listItems = screen.getAllByRole("listitem");
+    });
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
-      const { topic } = questions[index];
+      const { topic } = sortedQuestions[index];
       expect(getByText(topic)).toHaveTextContent(topic);
     });
   });
 
-  test("renders the correct answered status", () => {
+  test("renders the correct answered status", async () => {
+    renderQuestions();
+    await waitFor(() => {
+      listItems = screen.getAllByRole("listitem");
+    });
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
-      const { is_answered } = questions[index];
+      const { is_answered } = sortedQuestions[index];
       expect(
         getByText(is_answered ? "Solved" : "Not answered")
       ).toHaveTextContent(is_answered ? "Solved" : "Not answered");
