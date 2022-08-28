@@ -9,13 +9,19 @@ const Question = ({ question_id, title, summary, topic, isAnswered }) => {
       </Link>
       <p className="answer-format">
         {isAnswered ? (
-          <span className="solved-format">Solved</span>
+          <span data-testid="test-answer" className="solved-format">
+            Solved
+          </span>
         ) : (
-          <span className="not-answered-format">Not answered</span>
+          <span data-testid="test-answer" className="not-answered-format">
+            Not answered
+          </span>
         )}
       </p>
       <p className="summary-format">{summary}</p>
-      <p className="topic-layout">{topic}</p>
+      <p className="topic-layout" data-testid="topic">
+        {topic}
+      </p>
     </li>
   );
 };

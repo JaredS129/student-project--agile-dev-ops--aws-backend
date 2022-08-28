@@ -5,6 +5,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
       <select
+        data-testid="answered-dropdown"
         className="filter-format"
         id="answered"
         name="answered"
@@ -19,6 +20,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
       </select>
       <label htmlFor="topics">Topic:</label>
       <select
+        data-testid="topic-dropdown"
         className="filter-format"
         id="topics"
         name="topics"
@@ -28,7 +30,7 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
         }}
       >
         <option value={undefined}>All</option>
-        <option value="how-to">How-to</option>
+        <option value="how-to">how-to</option>
         <option value="React">React</option>
         <option value="Bugs">Bugs</option>
       </select>
