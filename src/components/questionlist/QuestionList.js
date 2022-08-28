@@ -11,6 +11,24 @@ const QuestionList = ({
   topic,
   setTopic,
 }) => {
+  let sortedQuestions = [];
+  const sortQuestions = () => {
+    const answered = questions.filter(
+      (question) => question.is_answered === true
+    );
+    const unanswered = questions.filter(
+      (question) => question.is_answered === false
+    );
+    unanswered.forEach((question) => {
+      sortedQuestions.push(question);
+    });
+    answered.forEach((question) => {
+      sortedQuestions.push(question);
+    });
+  };
+
+  sortQuestions();
+
   if (questions.length === 0) {
     return (
       <div>
@@ -40,7 +58,7 @@ const QuestionList = ({
       />
       {!topic ? null : <p data-testid="test-topic">{topic}</p>}
       <ul>
-        {questions
+        {sortedQuestions
           .filter((question) =>
             question.title
               .toLowerCase()
