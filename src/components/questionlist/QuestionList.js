@@ -2,6 +2,7 @@ import Question from "./Question";
 import FilterForm from "./FilterForm";
 import "./QuestionList.css";
 import { Link } from "react-router-dom";
+import sortQuestions from "../../utils/sortQuestions";
 
 const QuestionList = ({
   questions,
@@ -11,23 +12,7 @@ const QuestionList = ({
   topic,
   setTopic,
 }) => {
-  let sortedQuestions = [];
-  const sortQuestions = () => {
-    const answered = questions.filter(
-      (question) => question.is_answered === true
-    );
-    const unanswered = questions.filter(
-      (question) => question.is_answered === false
-    );
-    unanswered.forEach((question) => {
-      sortedQuestions.push(question);
-    });
-    answered.forEach((question) => {
-      sortedQuestions.push(question);
-    });
-  };
-
-  sortQuestions();
+  const sortedQuestions = sortQuestions(questions);
 
   if (questions.length === 0) {
     return (
