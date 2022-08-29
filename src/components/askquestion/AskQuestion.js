@@ -10,6 +10,7 @@ const AskQuestion = () => {
     problem: "",
     tried: "",
     topic: "",
+    summary: "Placeholder",
   });
   const [topics, setTopics] = useState([]);
 
