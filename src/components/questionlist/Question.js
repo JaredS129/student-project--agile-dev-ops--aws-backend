@@ -11,7 +11,7 @@ const Question = ({ question_id, title, summary, topic, isAnswered }) => {
         {isAnswered ? (
           <span data-testid="test-answer" className="solved-format">
             Solved
-          </span>
+          </span> 
         ) : (
           <span data-testid="test-answer" className="not-answered-format">
             Not answered
