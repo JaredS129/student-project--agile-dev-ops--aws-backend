@@ -1,6 +1,6 @@
 .header-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
   grid-gap: 1rem;
   border-bottom: 0.1rem solid #595c595d;
 }
@@ -47,4 +47,11 @@
   padding: 0rem 0.125rem;
   margin-right: 2rem;
   cursor: not-allowed;
+}
+
+@media (min-width: 50rem) {
+  .search-format{
+    max-width: 50rem;
+
+  }
 }
