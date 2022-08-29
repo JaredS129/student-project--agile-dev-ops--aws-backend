@@ -1,6 +1,20 @@
 import "./FilterForm.css";
+import { useState, useEffect } from "react";
+import { getTopics } from "../../api";
 
 const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    const fetchTopics = async () => {
+      const response = await getTopics();
+      if (response.error) {
+        return;
+      }
+      setTopics(response.body);
+    };
+    fetchTopics();
+  });
   return (
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
@@ -30,9 +44,11 @@ const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
         }}
       >
         <option value={undefined}>All</option>
-        <option value="how-to">how-to</option>
-        <option value="React">React</option>
-        <option value="Bugs">Bugs</option>
+        {topics.map((t) => (
+          <option key={t.topic_id} value={t.topic_name}>
+            {t.topic_name}
+          </option>
+        ))}
       </select>
     </form>
   );
