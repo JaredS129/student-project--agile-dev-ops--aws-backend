@@ -7,20 +7,6 @@
     "is_answered": false
   },
   {
-    "question_id": 2,
-    "title": "How do I wash my hair",
-    "summary": "Hello, I've never washed my hair in my life!",
-    "topic": "how-to",
-    "is_answered": true
-  },
-  {
-    "question_id": 3,
-    "title": "Creating react app",
-    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
-    "topic": "React",
-    "is_answered": true
-  },
-  {
     "question_id": 4,
     "title": "Can't get header working",
     "summary": "I have a header but I've broken it, someone please help me",
@@ -40,20 +26,6 @@
     "summary": "I do not know how to tie my shoes, can someone please help me learn",
     "topic": "how-to",
     "is_answered": false
-  },
-  {
-    "question_id": 7,
-    "title": "How do I wash my hair",
-    "summary": "Hello, I've never washed my hair in my life!",
-    "topic": "how-to",
-    "is_answered": true
-  },
-  {
-    "question_id": 8,
-    "title": "Creating react app",
-    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
-    "topic": "React",
-    "is_answered": true
   },
   {
     "question_id": 9,
@@ -77,20 +49,6 @@
     "is_answered": false
   },
   {
-    "question_id": 12,
-    "title": "How do I wash my hair",
-    "summary": "Hello, I've never washed my hair in my life!",
-    "topic": "how-to",
-    "is_answered": true
-  },
-  {
-    "question_id": 13,
-    "title": "Creating react app",
-    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
-    "topic": "React",
-    "is_answered": true
-  },
-  {
     "question_id": 14,
     "title": "Can't get header working",
     "summary": "I have a header but I've broken it, someone please help me",
@@ -103,5 +61,47 @@
     "summary": "It's just occurred to me that this might be in the wrong topic section",
     "topic": "Bugs",
     "is_answered": false
+  },
+  {
+    "question_id": 2,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "how-to",
+    "is_answered": true
+  },
+  {
+    "question_id": 3,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "is_answered": true
+  },
+  {
+    "question_id": 7,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "how-to",
+    "is_answered": true
+  },
+  {
+    "question_id": 8,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "is_answered": true
+  },
+  {
+    "question_id": 12,
+    "title": "How do I wash my hair",
+    "summary": "Hello, I've never washed my hair in my life!",
+    "topic": "how-to",
+    "is_answered": true
+  },
+  {
+    "question_id": 13,
+    "title": "Creating react app",
+    "summary": "Hey, I am having an issue creating a react app, can someone please walk me through it",
+    "topic": "React",
+    "is_answered": true
   }
 ]
