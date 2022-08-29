@@ -48,3 +48,10 @@
   margin-right: 2rem;
   cursor: not-allowed;
 }
+
+@media (min-width: 50rem) {
+  .search-format{
+    max-width: 50rem;
+
+  }
+}
