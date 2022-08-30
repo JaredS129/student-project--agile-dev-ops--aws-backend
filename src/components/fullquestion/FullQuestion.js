@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import "./FullQuestion.css";
-import AnswerList from "../answerList/AnswerList";
-import answers from "../../data/answers.json";
+import AnswerListWrapper from "../answerList/AnswerListWrapper";
 
 const FullQuestion = (props) => {
   const { id } = useParams();
@@ -41,7 +40,7 @@ const FullQuestion = (props) => {
           </span>
         </div>
       </div>
-      <AnswerList answers={answers["1"]} />
+      <AnswerListWrapper />
     </>
   );
 };
