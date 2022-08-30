@@ -126,11 +126,11 @@ const AskQuestion = () => {
           onChange={(e) => {
             setFormData({
               ...formData,
-              topic: e.target.value === "All" ? undefined : e.target.value,
+              topic: e.target.value === "None" ? undefined : e.target.value,
             });
           }}
         >
-          <option value={undefined}>All</option>
+          <option value={undefined}>None</option>
           {topics.map((t) => (
             <option key={t.topic_id} value={t.topic_name}>
               {t.topic_name}
