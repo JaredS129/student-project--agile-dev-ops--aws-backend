@@ -3,30 +3,13 @@ import QuestionList from "./QuestionList";
 import questionData from "../../data/questions.json";
 import sortedQuestions from "../../data/sortedQuestions.json";
 import { BrowserRouter } from "react-router-dom";
-import axios from "axios";
 import topics from "../../data/topics.json";
-
-jest.mock("axios");
-
-axios.get.mockImplementation(topics);
-
-jest.mock();
-
-const { server } = require("../../mocks/server");
-
-beforeAll(() => {
-  server.listen();
-});
-
-afterAll(() => {
-  server.close();
-});
 
 describe("QuestionList", () => {
   const renderQuestions = () => {
     render(
       <BrowserRouter>
-        <QuestionList questions={questions} />
+        <QuestionList questions={questions} topics={topics} />
       </BrowserRouter>
     );
   };
