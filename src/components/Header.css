@@ -1,13 +1,9 @@
-.header-grid {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  grid-gap: 1rem;
+.header-border {
   border-bottom: 0.1rem solid #595c595d;
 }
 
 .header-format {
   color: #684ff7;
-  padding-left: 2rem;
   font-weight: 900;
 }
 
@@ -21,6 +17,7 @@
   padding: 0.5rem 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .nav-link {
