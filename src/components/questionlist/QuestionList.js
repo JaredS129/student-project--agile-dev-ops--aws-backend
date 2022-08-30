@@ -11,6 +11,7 @@ const QuestionList = ({
   setAnswered,
   topic,
   setTopic,
+  topics,
 }) => {
   const sortedQuestions = sortQuestions(questions);
 
@@ -25,6 +26,7 @@ const QuestionList = ({
           setAnswered={setAnswered}
           topic={topic}
           setTopic={setTopic}
+          topics={topics}
         />
         <p>No questions yet!</p>
       </div>
@@ -40,6 +42,7 @@ const QuestionList = ({
         setAnswered={setAnswered}
         topic={topic}
         setTopic={setTopic}
+        topics={topics}
       />
       {!topic ? null : <p data-testid="test-topic">{topic}</p>}
       <ul>

@@ -68,7 +68,7 @@ const getAnswers = async () => {
   return data;
 };
 
-export const getTopics = async () => {
+const getTopics = async () => {
   const data = {
     body: undefined,
     error: undefined,
@@ -83,4 +83,4 @@ export const getTopics = async () => {
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, postQuestion };
+export { getQuestions, getQuestionById, getAnswers, postQuestion, getTopics };

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./AskQuestion.css";
-import { postQuestion, getTopics } from "../../api";
+import { postQuestion } from "../../api";
 
-const AskQuestion = () => {
+const AskQuestion = ({ topics }) => {
   const [formData, setFormData] = useState({
     title: "",
     working_on: "",
@@ -11,18 +11,6 @@ const AskQuestion = () => {
     tried: "",
     topic: "",
     summary: "Placeholder",
-  });
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    const fetchTopics = async () => {
-      const response = await getTopics();
-      if (response.error) {
-        return;
-      }
-      setTopics(response.body);
-    };
-    fetchTopics();
   });
 
   const handleSubmit = async (e) => {
