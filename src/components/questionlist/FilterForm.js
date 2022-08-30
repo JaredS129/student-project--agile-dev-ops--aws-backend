@@ -1,6 +1,12 @@
 import "./FilterForm.css";
 
-const FilterForm = ({ answered, setAnswered, topic, setTopic, topics }) => {
+const FilterForm = ({
+  answered,
+  setAnswered,
+  topic,
+  setTopic,
+  topics = [],
+}) => {
   return (
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>
