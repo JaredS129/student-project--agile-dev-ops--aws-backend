@@ -28,6 +28,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    let isMounted = true;
     const fetchData = async () => {
       const data = await getQuestions(answered, topic);
       const topicsData = await getTopics();
@@ -38,11 +39,16 @@ const App = () => {
         setError(`Error: API call returned a status ${data.error}`);
         return;
       }
-      setQuestions(data.body);
-      setTopics(topicsData.body);
-      setIsLoading(false);
+      if (isMounted) {
+        setQuestions(data.body);
+        setTopics(topicsData.body);
+        setIsLoading(false);
+      }
     };
     fetchData();
+    return () => {
+      isMounted = false;
+    };
   }, [answered, topic]);
 
   if (isLoading) {
