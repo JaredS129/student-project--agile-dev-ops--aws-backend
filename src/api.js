@@ -1,4 +1,6 @@
 import singleQuestion from "./data/singleQuestion.json";
+import answers from "./data/answers.json";
+import topics from "./data/topics.json";
 import axios from "axios";
 
 const getQuestions = async (answered, topic) => {
@@ -65,6 +67,14 @@ const getAnswers = async () => {
   } catch (err) {
     data.error = err;
   }
+  return data;
+};
+
+export const getTopics = async () => {
+  const data = {
+    body: topics,
+    error: undefined,
+  };
   return data;
 };
 
