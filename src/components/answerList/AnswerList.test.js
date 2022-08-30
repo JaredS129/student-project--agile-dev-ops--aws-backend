@@ -14,16 +14,16 @@ describe("AnswerList", () => {
   test("renders the correct answer titles", () => {
     listItems.forEach((item, index) => {
       const { getByRole } = within(item);
-      const { answerTitle } = answers[index];
-      expect(getByRole("heading", { level: 3 })).toHaveTextContent(answerTitle);
+      const { author } = answers[index];
+      expect(getByRole("heading", { level: 3 })).toHaveTextContent(author);
     });
   });
 
   test("renders the correct summaries", () => {
     listItems.forEach((item, index) => {
       const { getByText } = within(item);
-      const { answerText } = answers[index];
-      expect(getByText(answerText)).toHaveTextContent(answerText);
+      const { body } = answers[index];
+      expect(getByText(body)).toHaveTextContent(body);
     });
   });
 });

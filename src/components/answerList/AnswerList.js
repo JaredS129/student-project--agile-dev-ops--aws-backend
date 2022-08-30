@@ -2,7 +2,16 @@ import Answer from "./Answer";
 import React from "react";
 import "./AnswerList.css";
 
-const AnswerList = ({ answers }) => {
+const AnswerList = (answers) => {
+  if (!Array.isArray(answers)) {
+    console.log(answers);
+    return (
+      <>
+        <p>No answers!</p>
+      </>
+    );
+  }
+
   return (
     <div>
       <ul>
@@ -10,9 +19,9 @@ const AnswerList = ({ answers }) => {
           return (
             <Answer
               key={answer.answer_id}
-              answerTitle={answer.answerTitle}
-              answerText={answer.answerText}
-              goodAnswer={answer.goodAnswer}
+              author={answer.author}
+              body={answer.body}
+              is_solution={answer.is_solution}
             />
           );
         })}
