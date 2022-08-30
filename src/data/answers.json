@@ -1,39 +1,25 @@
 {
   "1": [
     {
-      "answer_id": 1,
+      "id": 1,
       "question_id": 1,
-      "answerTitle": "My answer",
-      "answerText": "MY answer is to tie your shoes",
-      "goodAnswer": false
+      "author": "Campbell",
+      "body": "Tie your shoes",
+      "is_solution": true
     },
     {
-      "answer_id": 2,
+      "id": 2,
       "question_id": 1,
-      "answerTitle": "My answer",
-      "answerText": "MY answer is to tie your shoes and put them on your head",
-      "goodAnswer": true
+      "author": "Michael",
+      "body": "Throw your shoes away",
+      "is_solution": false
     },
     {
-      "answer_id": 3,
+      "id": 3,
       "question_id": 1,
-      "answerTitle": "My answer",
-      "answerText": "MY answer is to tie your shoes",
-      "goodAnswer": false
-    },
-    {
-      "answer_id": 4,
-      "question_id": 1,
-      "answerTitle": "My answer",
-      "answerText": "MY answer is to tie your shoes",
-      "goodAnswer": false
-    },
-    {
-      "answer_id": 21,
-      "question_id": 1,
-      "answerTitle": "My answer",
-      "answerText": "MY answer is to tie your shoes",
-      "goodAnswer": false
+      "author": "Deniz",
+      "body": "Remove your shoelaces",
+      "is_solution": false
     }
   ]
 }

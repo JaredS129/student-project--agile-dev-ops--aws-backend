@@ -2,9 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Answer from "./Answer";
 
 test("renders an answer", () => {
-  render(
-    <Answer answerTitle="TestAnswer" answerText="TestText" goodAnswer={false} />
-  );
+  render(<Answer author="TestAnswer" body="TestText" is_solution={false} />);
   expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(
     "TestAnswer"
   );
@@ -12,9 +10,7 @@ test("renders an answer", () => {
 });
 
 test("renders an answer that is the solution", () => {
-  render(
-    <Answer answerTitle="TestAnswer" answerText="TestText" goodAnswer={true} />
-  );
+  render(<Answer author="TestAnswer" body="TestText" is_solution={true} />);
   expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(
     "TestAnswer"
   );

@@ -13,9 +13,6 @@ const AnswerListWrapper = () => {
     fetchData();
   }, []);
 
-  if (answers === []) {
-    return <></>;
-  }
   return <AnswerList answers={answers} />;
 };
 
