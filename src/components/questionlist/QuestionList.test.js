@@ -1,10 +1,4 @@
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  within,
-} from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import QuestionList from "./QuestionList";
 import questionData from "../../data/questions.json";
 import sortedQuestions from "../../data/sortedQuestions.json";
