@@ -9,7 +9,7 @@
   }
 
 .link-format {
-    display: grid;
+    display: block;
     width: fit-content;
     font-weight: 900;
     color: #20bd59;
