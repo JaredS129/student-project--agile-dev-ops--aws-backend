@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = ({ searchText, setSearchText }) => {
   return (
     <header>
-      <div className="header-grid">
+      <div className="header-border">
           <Link to="/">
             <h1 className="header-format">Questionz.io</h1>
           </Link>
