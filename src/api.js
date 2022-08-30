@@ -1,5 +1,6 @@
 import singleQuestion from "./data/singleQuestion.json";
 import answers from "./data/answers.json";
+import topics from "./data/topics.json";
 import axios from "axios";
 
 const getQuestions = async (answered, topic) => {
@@ -30,14 +31,14 @@ const getQuestions = async (answered, topic) => {
   return data;
 };
 
-const postQuestion = async (formData) => { 
+const postQuestion = async (formData) => {
   const data = {
     body: undefined,
     error: undefined,
   };
   try {
     const response = await axios.post(`/api/questions`, {
-      body: formData
+      body: formData,
     });
     data.body = response.data;
   } catch (err) {
@@ -57,6 +58,14 @@ const getQuestionById = async (id) => {
 const getAnswers = async () => {
   const data = {
     body: answers,
+    error: undefined,
+  };
+  return data;
+};
+
+export const getTopics = async () => {
+  const data = {
+    body: topics,
     error: undefined,
   };
   return data;

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AskQuestion.css";
-import { postQuestion } from "../../api";
+import { postQuestion, getTopics } from "../../api";
 
 const AskQuestion = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,20 @@ const AskQuestion = () => {
     trying_achieve: "",
     problem: "",
     tried: "",
+    topic: "",
+    summary: "Placeholder",
+  });
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    const fetchTopics = async () => {
+      const response = await getTopics();
+      if (response.error) {
+        return;
+      }
+      setTopics(response.body);
+    };
+    fetchTopics();
   });
 
   const handleSubmit = async (e) => {
@@ -102,6 +116,27 @@ const AskQuestion = () => {
             }
           />
         </div>
+        <label htmlFor="topics">Topic:</label>
+        <select
+          data-testid="topic-dropdown"
+          className="filter-format"
+          id="topics"
+          name="topics"
+          value={formData.topic}
+          onChange={(e) => {
+            setFormData({
+              ...formData,
+              topic: e.target.value === "All" ? undefined : e.target.value,
+            });
+          }}
+        >
+          <option value={undefined}>All</option>
+          {topics.map((t) => (
+            <option key={t.topic_id} value={t.topic_name}>
+              {t.topic_name}
+            </option>
+          ))}
+        </select>
       </form>
       <button onClick={handleSubmit} className="button-format">
         Ask
