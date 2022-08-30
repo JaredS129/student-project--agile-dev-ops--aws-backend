@@ -10,7 +10,7 @@ const server = setupServer(
     return res(ctx.json(questions));
   })
 );
-beforeAll(() => server.listen());
+beforeAll(() => server.listen({ onUnhandledRequest: "bypass" }));
 
 afterEach(() => server.resetHandlers());
 
