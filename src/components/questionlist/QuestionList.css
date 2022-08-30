@@ -25,9 +25,9 @@
 
 .link-format:hover {
     text-shadow: 0.25rem 0.25rem 0.5rem #00000069;
+    color: #68628c;
     background-color: #dfdfdf;
     font-size: 1.5rem;
-    font-style: italic;
     cursor: pointer;
 }
 
