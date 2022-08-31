@@ -1,5 +1,6 @@
 import { rest } from "msw";
 import questionList from "../data/questions.json";
+import topics from "../data/topics.json";
 
 export const handlers = [
   // Handles a GET /questions request
@@ -32,6 +33,13 @@ export const handlers = [
         ctx.json(questionList.filter((question) => question.topic === topic))
       );
     }
+  }),
+
+  rest.get(`/api/topics`, (req, res, ctx) => {
+    return res(ctx.json(topics));
+  }),
+  rest.get("http://localhost/api/topics", (req, res, ctx) => {
+    return res(ctx.json(topics));
   }),
   // Handles a POST /questions request
 ];

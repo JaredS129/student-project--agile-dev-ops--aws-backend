@@ -1,20 +1,12 @@
 import "./FilterForm.css";
-import { useState, useEffect } from "react";
-import { getTopics } from "../../api";
 
-const FilterForm = ({ answered, setAnswered, topic, setTopic }) => {
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    const fetchTopics = async () => {
-      const response = await getTopics();
-      if (response.error) {
-        return;
-      }
-      setTopics(response.body);
-    };
-    fetchTopics();
-  });
+const FilterForm = ({
+  answered,
+  setAnswered,
+  topic,
+  setTopic,
+  topics = [],
+}) => {
   return (
     <form className="form-format">
       <label htmlFor="answered">Filter by:</label>

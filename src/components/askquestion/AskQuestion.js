@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./AskQuestion.css";
-import { postQuestion, getTopics } from "../../api";
+import { postQuestion } from "../../api";
 
-const AskQuestion = () => {
+const AskQuestion = ({ topics }) => {
   const [formData, setFormData] = useState({
     title: "",
     working_on: "",
@@ -11,18 +11,6 @@ const AskQuestion = () => {
     tried: "",
     topic: "",
     summary: "Placeholder",
-  });
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    const fetchTopics = async () => {
-      const response = await getTopics();
-      if (response.error) {
-        return;
-      }
-      setTopics(response.body);
-    };
-    fetchTopics();
   });
 
   const handleSubmit = async (e) => {
@@ -126,11 +114,11 @@ const AskQuestion = () => {
           onChange={(e) => {
             setFormData({
               ...formData,
-              topic: e.target.value === "All" ? undefined : e.target.value,
+              topic: e.target.value === "None" ? undefined : e.target.value,
             });
           }}
         >
-          <option value={undefined}>All</option>
+          <option value={undefined}>None</option>
           {topics.map((t) => (
             <option key={t.topic_id} value={t.topic_name}>
               {t.topic_name}

@@ -1,5 +1,4 @@
 import singleQuestion from "./data/singleQuestion.json";
-import topics from "./data/topics.json";
 import axios from "axios";
 
 const getQuestions = async (answered, topic) => {
@@ -69,12 +68,19 @@ const getAnswers = async () => {
   return data;
 };
 
-export const getTopics = async () => {
+const getTopics = async () => {
   const data = {
-    body: topics,
+    body: undefined,
     error: undefined,
   };
+
+  try {
+    const response = await axios.get(`/api/topics`);
+    data.body = response.data;
+  } catch (err) {
+    data.error = err;
+  }
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, postQuestion };
+export { getQuestions, getQuestionById, getAnswers, postQuestion, getTopics };
