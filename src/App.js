@@ -24,8 +24,8 @@ const App = () => {
   const [error, setError] = useState("");
   const [searchText, setSearchText] = useState("");
 
-  const [answered, setAnswered] = useState(undefined);
-  const [topic, setTopic] = useState(undefined);
+  const [answered, setAnswered] = useState();
+  const [topic, setTopic] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
