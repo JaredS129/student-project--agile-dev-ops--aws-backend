@@ -1,5 +1,4 @@
 import singleQuestion from "./data/singleQuestion.json";
-import answers from "./data/answers.json";
 import axios from "axios";
 
 const getQuestions = async (answered, topic) => {
@@ -30,18 +29,20 @@ const getQuestions = async (answered, topic) => {
   return data;
 };
 
-const getPost = async () => {
+const postQuestion = async (formData) => {
   const data = {
     body: undefined,
     error: undefined,
   };
   try {
-    const response = await axios.post(`/api/questions`, {});
+    const response = await axios.post(`/api/questions`, {
+      body: formData,
+    });
     data.body = response.data;
   } catch (err) {
     data.error = err;
   }
-  return data;
+  return data.body;
 };
 
 const getQuestionById = async (id) => {
@@ -54,10 +55,32 @@ const getQuestionById = async (id) => {
 
 const getAnswers = async () => {
   const data = {
-    body: answers,
+    body: undefined,
     error: undefined,
   };
+
+  try {
+    const response = await axios.get(`/api/answers`);
+    data.body = response.data;
+  } catch (err) {
+    data.error = err;
+  }
   return data;
 };
 
-export { getQuestions, getQuestionById, getAnswers, getPost };
+const getTopics = async () => {
+  const data = {
+    body: undefined,
+    error: undefined,
+  };
+
+  try {
+    const response = await axios.get(`/api/topics`);
+    data.body = response.data;
+  } catch (err) {
+    data.error = err;
+  }
+  return data;
+};
+
+export { getQuestions, getQuestionById, getAnswers, postQuestion, getTopics };

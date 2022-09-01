@@ -12,15 +12,23 @@
     display: block;
     width: fit-content;
     font-weight: 900;
-    color: black;
-    border-color: #68628c !important;
-    opacity: 0.5;
+    color: #20bd59;
+    border-color: #20bd59 !important;
     border: 0.15rem solid;
     border-radius: 0.2rem;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     margin-top: 2rem;
-    margin-left: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link-format:hover {
+    text-shadow: 0.25rem 0.25rem 0.5rem #00000069;
+    color: #68628c;
+    background-color: #dfdfdf;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 ul {

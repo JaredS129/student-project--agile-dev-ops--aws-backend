@@ -2,6 +2,7 @@ import Question from "./Question";
 import FilterForm from "./FilterForm";
 import "./QuestionList.css";
 import { Link } from "react-router-dom";
+import sortQuestions from "../../utils/sortQuestions";
 
 const QuestionList = ({
   questions,
@@ -10,7 +11,10 @@ const QuestionList = ({
   setAnswered,
   topic,
   setTopic,
+  topics,
 }) => {
+  const sortedQuestions = sortQuestions(questions);
+
   if (questions.length === 0) {
     return (
       <div>
@@ -22,6 +26,7 @@ const QuestionList = ({
           setAnswered={setAnswered}
           topic={topic}
           setTopic={setTopic}
+          topics={topics}
         />
         <p>No questions yet!</p>
       </div>
@@ -37,9 +42,11 @@ const QuestionList = ({
         setAnswered={setAnswered}
         topic={topic}
         setTopic={setTopic}
+        topics={topics}
       />
+      {!topic ? null : <p data-testid="test-topic">{topic}</p>}
       <ul>
-        {questions
+        {sortedQuestions
           .filter((question) =>
             question.title
               .toLowerCase()

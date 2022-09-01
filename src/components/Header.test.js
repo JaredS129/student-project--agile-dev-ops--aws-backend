@@ -10,6 +10,4 @@ test("renders header components", () => {
   );
 
   expect(screen.getByText("Questionz.io")).toBeInTheDocument();
-  expect(screen.getByText("Log In")).toBeInTheDocument();
-  expect(screen.getByText("Dashboard")).toBeInTheDocument();
 });

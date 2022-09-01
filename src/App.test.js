@@ -4,13 +4,16 @@ import App from "./App";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import questions from "./data/questions.json";
+import topics from "./data/topics.json";
 
 const server = setupServer(
   rest.get("/api/questions", (req, res, ctx) => {
     return res(ctx.json(questions));
   })
 );
-beforeAll(() => server.listen());
+beforeAll(() => {
+  server.listen({ onUnhandledRequest: "bypass" });
+});
 
 afterEach(() => server.resetHandlers());
 
@@ -28,6 +31,11 @@ test("renders title", async () => {
 });
 
 test("renders lists of questions", async () => {
+  server.use(
+    rest.get("/api/topics", (req, res, ctx) => {
+      return res(ctx.json(topics));
+    })
+  );
   render(
     <BrowserRouter>
       <App />
@@ -47,6 +55,11 @@ test("renders error if error from api call", async () => {
       );
     })
   );
+  server.use(
+    rest.get("/api/topics", (req, res, ctx) => {
+      return res(ctx.json(topics));
+    })
+  );
   render(
     <BrowserRouter>
       <App />
@@ -63,6 +76,11 @@ test("renders no questions yet if no questions", async () => {
   server.use(
     rest.get("/api/questions", (req, res, ctx) => {
       return res(ctx.json([]));
+    })
+  );
+  server.use(
+    rest.get("/api/topics", (req, res, ctx) => {
+      return res(ctx.json(topics));
     })
   );
   render(

@@ -4,8 +4,7 @@ import "./Header.css";
 const Header = ({ searchText, setSearchText }) => {
   return (
     <header>
-      <div className="header-grid">
-        <div>
+      <div className="header-border">
           <Link to="/">
             <h1 className="header-format">Questionz.io</h1>
           </Link>
@@ -20,15 +19,6 @@ const Header = ({ searchText, setSearchText }) => {
               onChange={(e) => setSearchText(e.target.value)}
             />
           </form>
-        </div>
-        <ul className="nav-link">
-          <li className="login-format">
-            <p>Log In</p>
-          </li>
-          <li className="dashboard-format">
-            <p>Dashboard</p>
-          </li>
-        </ul>
       </div>
     </header>
   );
