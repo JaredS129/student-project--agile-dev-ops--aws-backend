@@ -1,3 +1,5 @@
+### **This repo is a clone of one of my student projects. Cloned from my private Developer's Institute GitHub account.**
+
 # AWS Copilot PERN Stack - Client (Create React App)
 
 This repository contains starter code to run a React App. Follow the tutorial in Google Classroom to deploy this React App service to AWS using [AWS Copilot](https://aws.github.io/copilot-cli/).
